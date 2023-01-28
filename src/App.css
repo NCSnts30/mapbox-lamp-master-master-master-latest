@@ -1,0 +1,22 @@
+body{
+    margin:0;
+    padding:0;
+   
+}
+
+nav {
+    cursor: pointer !important;
+  }
+
+.bg-loginbg{
+    background-image:  url('src/assets/loginbg.jpg');
+    background-color: rgba(68,187,164, 0.47);
+}
+.rec.rec-arrow {
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+}
+.rec.rec-arrow:hover {
+    background-color: transparent;
+}

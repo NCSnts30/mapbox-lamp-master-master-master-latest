@@ -1,0 +1,38 @@
+[
+    {
+      "lat": "14.4",
+      "long": "121.03",
+      "place": "Muntinlupa",
+      "volts": "8",
+      "current": "2",
+      "power": "12",
+      "luminosity": "2"
+    },
+    {
+      "lat": "14.5995",
+      "long": "120.9842",
+      "place": "Manila",
+      "volts": "10",
+      "current":"5" ,
+      "power": "20",
+      "luminosity":"15" 
+    },
+    {
+      "lat": "14.5378",
+      "long": "121.0014",
+      "place": "Pasay",
+      "volts": "16",
+      "current": "7",
+      "power": "16",
+      "luminosity":"21"
+    },
+    {
+      "lat": "14.5547",
+      "long": "121.0244",
+      "place": "Makati",
+      "volts": "5",
+      "current": "10",
+      "power": "18",
+      "luminosity": "30"
+    }
+  ]
