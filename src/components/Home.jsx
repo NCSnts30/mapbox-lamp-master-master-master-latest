@@ -1,6 +1,10 @@
 import React from 'react';
 import Carousel from 'react-elastic-carousel';
-import lamp1 from '../assets/lamp1.jpg';
+import lamp1 from '../assets/A.jpg';
+import lamp2 from '../assets/B.jpg';
+import lamp3 from '../assets/C.jpg';
+import lamp4 from '../assets/D.jpg';
+import lamp5 from '../assets/E.jpg';
 import AboutUs from './AboutUs';
 import Footer from './Footer';
 
@@ -12,10 +16,10 @@ const breakPoints = [
 function Home() {
   const items = [
     { id: 1, src: lamp1 },
-    { id: 2, src: lamp1, title: 'item #2' },
-    { id: 3, src: lamp1, title: 'item #3' },
-    { id: 4, src: lamp1, title: 'item #4' },
-    { id: 5, src: lamp1, title: 'item #5' },
+    { id: 2, src: lamp2, title: 'item #2' },
+    { id: 3, src: lamp3, title: 'item #3' },
+    { id: 4, src: lamp4, title: 'item #4' },
+    { id: 5, src: lamp5, title: 'item #5' },
   ];
 
   return (

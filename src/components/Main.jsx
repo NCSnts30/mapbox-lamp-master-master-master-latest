@@ -24,11 +24,9 @@ function Main() {
           <div className="col-xl-3 col-md-6">
             <div className="card bg-primary text-white mb-4">
               <div className="card-body">
-                {' '}
-                Battery Voltage: {Number(battery_voltage).toFixed(
-                  2
-                )} <br /> Solar Voltage:
-                {Number(solar_voltage).toFixed(2)}{' '}
+                Battery Voltage: {Number(battery_voltage).toFixed(2)} <br />{' '}
+                Solar Voltage:
+                {Number(solar_voltage).toFixed(2)}
               </div>
               <div className="card-footer d-flex align-items-center justify-content-between">
                 <a className="small text-white stretched-link">View Details</a>
@@ -73,7 +71,7 @@ function Main() {
           <div className="col-xl-3 col-md-6">
             <div className="card bg-success text-white mb-4">
               <div className="card-body">
-                Luminosity: {Number(luminosity).toFixed(2)}{' '}
+                Luminosity: {Number(luminosity).toFixed(2)}
               </div>
               <div className="card-footer d-flex align-items-center justify-content-between">
                 <a className="small text-white stretched-link" href="#">

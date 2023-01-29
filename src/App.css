@@ -9,8 +9,12 @@ nav {
   }
 
 .bg-loginbg{
+    background-position: center;
     background-image:  url('src/assets/loginbg.jpg');
     background-color: rgba(68,187,164, 0.47);
+}
+.auth-form-container{
+    background-position: center;
 }
 .rec.rec-arrow {
     border-radius: 0;

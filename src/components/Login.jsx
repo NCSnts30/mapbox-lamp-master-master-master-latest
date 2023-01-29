@@ -1,95 +1,41 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import React from 'react';
+import loginbg from '../assets/loginbg.jpg';
 
 function Login() {
-  const initialValues = { username: '', email: '', password: '' };
-  const [formValues, setFormValues] = useState(initialValues);
-  const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
-    console.log(formValues);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormErrors(validate(formValues));
-    setIsSubmit(true);
-  };
-  useEffect(() => {
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(formValues);
-    }
-  }, [formErrors]);
-
-  const validate = (values) => {
-    const errors = {};
-    const regex = /^ [^\s@] + @[^\s@] +\.[^\s@]{2,}$/;
-    if (!values.username) {
-      errors.username = 'Username is required!';
-    }
-    if (!values.email) {
-      errors.email = 'Email is required!';
-    }
-    if (!values.password) {
-      errors.password = 'Password is required!';
-    } else if (values.password.length < 4)
-      errors.password = 'Password must be more than 4 characters';
-    return errors;
-  };
-
   return (
-    <div className="bg-cover bg-center bg-opacity-47 bg-loginbg h-screen">
-      <div className="container" id="login">
-        {Object.keys(formErrors).length === 0 && isSubmit ? (
-          <div className="ui message success"> Sign In Successful </div>
-        ) : (
-          <pre>{JSON.stringify()}</pre>
-        )}
-        <form onSubmit={handleSubmit}>
-          <h1>Login</h1>
-          <div className="ui divider">
-            <div className="ui form">
-              <div className="field">
-                <label>
-                  Username
-                  <input
-                    type="text"
-                    name="username"
-                    placeholder="Username"
-                    value={formValues.username}
-                    onChange={handleChange}
-                  />
-                </label>
-              </div>
-              <p>{formErrors.username}</p>
-              <div className="field">
-                <label>Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={formValues.email}
-                  onChange={handleChange}
-                />
-              </div>
-              <p>{formErrors.email}</p>
-              <div className="field">
-                <label>Password</label>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  value={formValues.password}
-                  onChange={handleChange}
-                />
-              </div>
-              <p>{formErrors.password}</p>
-              <button className="fluid ui button green">Submit</button>
-            </div>
+    <div className="grid grid-cols sm:grid-cols-2 h-screen w-full">
+      <div className="hidden sm:block">
+        <img className="w-full h-full object cover" src={loginbg} alt="" />
+      </div>
+
+      <div className="bg-gray-900 flex flex-col justify-center">
+        <form className="max-w-[400px] w-full mx-auto bg-gray-800 p-8 px-8 rounded-lg">
+          <h2 className="text-6x1 dark:text-white font-bold text-center">
+            SIGN IN
+          </h2>
+          <div className="flex flex-col text-gray-400 py-2">
+            <label> Email </label>
+            <input
+              className="rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none"
+              type="email"
+            />
           </div>
+          <div className="flex flex-col text-gray-400 py-2">
+            <label> Password </label>
+            <input
+              className="rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none"
+              type="password"
+            />
+          </div>
+          <div className="flex justify-between text-gray-400">
+            <p className="flex items-center">
+              <input className="mr-2" type="checkbox" /> Remember Me
+            </p>
+            <p>Forgot Password</p>
+          </div>
+          <button className="w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal 500/40 text white font-semibold rounded-lg">
+            Submit
+          </button>
         </form>
       </div>
     </div>
