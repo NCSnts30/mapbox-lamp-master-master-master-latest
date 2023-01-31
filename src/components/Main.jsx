@@ -29,7 +29,12 @@ function Main() {
                 {Number(solar_voltage).toFixed(2)}
               </div>
               <div className="card-footer d-flex align-items-center justify-content-between">
-                <a className="small text-white stretched-link">View Details</a>
+                <a
+                  className="small text-white stretched-link"
+                  href="#ViewDetails"
+                >
+                  View Details
+                </a>
                 <div className="small text-white">
                   <i className="fas fa-angle-right" />
                 </div>
@@ -43,7 +48,10 @@ function Main() {
                 Solar Current: {Number(solar_current).toFixed(2)}
               </div>
               <div className="card-footer d-flex align-items-center justify-content-between">
-                <a className="small text-white stretched-link" href="#">
+                <a
+                  className="small text-white stretched-link"
+                  href="#ViewDetails"
+                >
                   View Details
                 </a>
                 <div className="small text-white">
@@ -59,7 +67,10 @@ function Main() {
                 Power: {Number(solar_power).toFixed(4)}
               </div>
               <div className="card-footer d-flex align-items-center justify-content-between">
-                <a className="small text-white stretched-link" href="#">
+                <a
+                  className="small text-white stretched-link"
+                  href="#ViewDetails"
+                >
                   View Details
                 </a>
                 <div className="small text-white">
@@ -74,7 +85,10 @@ function Main() {
                 Luminosity: {Number(luminosity).toFixed(2)}
               </div>
               <div className="card-footer d-flex align-items-center justify-content-between">
-                <a className="small text-white stretched-link" href="#">
+                <a
+                  className="small text-white stretched-link"
+                  href="#ViewDetails"
+                >
                   View Details
                 </a>
                 <div className="small text-white">

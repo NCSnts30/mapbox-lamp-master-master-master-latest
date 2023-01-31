@@ -24,8 +24,8 @@ function NavBar() {
           <NavLink to="/">
             <Link
               to="about-us"
-              spy={true}
-              smooth={true}
+              spy
+              smooth
               offset={885}
               duration={500}
               onClick={closeMenu}
