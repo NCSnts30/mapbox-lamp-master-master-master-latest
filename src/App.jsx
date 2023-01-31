@@ -17,7 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<ContextProviders />} />
           <Route path="/contact" element={<ContactUs />} />
-          <Route exact path="/" element={<AboutUs />} />
+          <Route path="/about-us" element={<AboutUs />} />
           <Route path="/login" element={<Login />} />
         </Routes>
       </div>
