@@ -1,4 +1,5 @@
 import React from 'react';
+import { Element } from 'react-scroll';
 import Typed from 'react-typed';
 import kae from '../assets/Kae.jpg';
 import ob from '../assets/OB.jpg';
@@ -9,7 +10,7 @@ import wsm from '../assets/WSM.jpg';
 
 function AboutUs() {
   return (
-    <div className="" id="about-us">
+    <Element className="p-20" id="about-us">
       <div className="flex place-content-end">
         <span className="text-7xl ">
           <Typed
@@ -78,7 +79,7 @@ function AboutUs() {
           />
         </div>
       </div>
-    </div>
+    </Element>
   );
 }
 

@@ -24,7 +24,7 @@ function Home() {
 
   return (
     <div id="about-us">
-      <div className="flex flex-column items-center bg-emerald-300 h-full py-28">
+      <div className="flex flex-column items-center bg-loginbg h-full p-28 relative">
         <div>
           <h1 className="text-9xl uppercase text-white drop-shadow-3xl">
             VOLTAIC V
@@ -34,7 +34,11 @@ function Home() {
           IOT Centralized Monitoring System for Solar Streetlight Application
           using LoRa with Microcontroller
         </div>
-        <Carousel breakPoints={breakPoints} className="mt-20">
+
+        <Carousel
+          breakPoints={breakPoints}
+          className="mt-20  bg-white bg-opacity-10 backdrop-blur-lg rounded drop-shadow-3xl p-20 relative"
+        >
           {items.map((item) => (
             <div key={item.id}>
               <img src={item.src} alt="" className="ml-10" />
