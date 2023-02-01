@@ -1,9 +1,10 @@
 import React from 'react';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
+import './css/home.css';
 
 function ContactUs() {
   return (
-    <div className="p-32 bg-loginbg text-white">
+    <div className="p-32 bg text-white">
       <div
         id="contact-us"
         className="bg-white bg-opacity-10 backdrop-blur-lg rounded drop-shadow-3xl p-20"

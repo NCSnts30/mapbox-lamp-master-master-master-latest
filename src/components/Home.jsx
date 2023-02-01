@@ -7,6 +7,7 @@ import lamp4 from '../assets/D.jpg';
 import lamp5 from '../assets/E.jpg';
 import AboutUs from './AboutUs';
 import Footer from './Footer';
+import './css/home.css';
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -24,7 +25,7 @@ function Home() {
 
   return (
     <div id="about-us">
-      <div className="flex flex-column items-center bg-loginbg h-full p-28 relative">
+      <div className="flex flex-column items-center bg h-full p-28 relative">
         <div>
           <h1 className="text-9xl uppercase text-white drop-shadow-3xl">
             VOLTAIC V
