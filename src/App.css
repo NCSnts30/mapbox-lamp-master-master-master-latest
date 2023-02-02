@@ -46,3 +46,49 @@ nav li {
     background: rgb(37, 37, 37);
     border-radius: 15px;
 }
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .pagination-sub-container {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .pagination-page {
+    background-color: white;
+    color: gray;
+    padding: 8px 12px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 4px;
+    cursor: pointer;
+  }
+  
+  .pagination-page:hover {
+    background-color: #eee;
+  }
+  
+  .pagination-page-active {
+    background-color: green;
+    color: white;
+    border-color: green;
+  }
+  
+  .pagination-page-disabled {
+    background-color: #eee;
+    color: gray;
+    cursor: not-allowed;
+  }
+  
+  .pagination-page-break {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 4px;
+    color: gray;
+  }
+  

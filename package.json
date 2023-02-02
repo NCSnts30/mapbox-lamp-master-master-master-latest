@@ -29,6 +29,8 @@
     "react-hook-form": "^7.42.1",
     "react-icons": "^4.7.1",
     "react-map-gl": "^7.0.19",
+    "react-paginate": "^8.1.4",
+    "react-pagination-table": "^2.0.2",
     "react-router-dom": "^6.4.2",
     "react-scripts": "^5.0.1",
     "react-scroll": "^1.8.9",
