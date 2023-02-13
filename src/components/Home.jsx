@@ -25,7 +25,7 @@ function Home() {
 
   return (
     <div id="about-us">
-      <div className="flex flex-column items-center bg h-full p-28 relative">
+      <div className="flex flex-column items-center bg h-full p-28 relative p-6 md:p-12 lg:p-20 xl:p-32">
         <div>
           <h1 className="text-9xl uppercase text-white drop-shadow-3xl">
             VOLTAIC V
@@ -38,7 +38,7 @@ function Home() {
 
         <Carousel
           breakPoints={breakPoints}
-          className="mt-20  bg-white bg-opacity-10 backdrop-blur-lg rounded drop-shadow-3xl p-20 relative"
+          className="mt-20 bg-white bg-opacity-10 backdrop-blur-lg rounded drop-shadow-3xl p-6 md:p-12 lg:p-20 xl:p-32"
         >
           {items.map((item) => (
             <div key={item.id}>

@@ -67,7 +67,6 @@ function Table() {
             previousClassName={pageClass}
             nextClassName={pageClass}
             disabledClassName="pagination-page-disabled"
-            breakClassName="pagination-page-break"
           />
         </>
       )}
