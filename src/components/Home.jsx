@@ -25,24 +25,27 @@ function Home() {
 
   return (
     <div id="about-us">
-      <div className="flex flex-column items-center bg h-full p-28 relative p-6 md:p-12 lg:p-20 xl:p-32">
+      <div className="flex flex-col items-center bg-slate-700 p-6 md:p-12 lg:p-20 xl:p-32 h-full relative">
         <div>
-          <h1 className="text-9xl uppercase text-white drop-shadow-3xl">
+          <h1 className="text-white uppercase drop-shadow-3xl sm:hidden md:block sm:text-5xl md:text-9xl sm:text-center sm:w-full">
             VOLTAIC V
           </h1>
         </div>
-        <div className="text-justify text-white drop-shadow-3xl text-2xl">
+        <div className="text-white text-justify drop-shadow-3xl text-2xl">
           IOT Centralized Monitoring System for Solar Streetlight Application
           using LoRa with Microcontroller
         </div>
-
         <Carousel
           breakPoints={breakPoints}
-          className="mt-20 bg-white bg-opacity-10 backdrop-blur-lg rounded drop-shadow-3xl p-6 md:p-12 lg:p-20 xl:p-32"
+          className="mt-10 md:mt-20 lg:mt-40 bg-white bg-opacity-10 backdrop-blur-md md:backdrop-blur-lg rounded drop-shadow-2xl md:drop-shadow-3xl p-4 md:p-6 lg:p-12 xl:p-20"
         >
           {items.map((item) => (
             <div key={item.id}>
-              <img src={item.src} alt="" className="ml-10" />
+              <img
+                src={item.src}
+                alt=""
+                className="ml-10 w-auto h-64 object-cover"
+              />
             </div>
           ))}
         </Carousel>
