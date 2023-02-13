@@ -11,8 +11,8 @@ import './css/home.css';
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
-  { width: 550, itemsToShow: 1 },
-  { width: 550, itemsToShow: 3, itemsToScroll: 3 },
+  { width: 550, itemsToShow: 2 },
+  { width: 800, itemsToShow: 3, itemsToScroll: 3 },
 ];
 
 function Home() {
@@ -28,7 +28,7 @@ function Home() {
     <div id="about-us">
       <div className="flex flex-col items-center bg-slate-700 p-6 md:p-12 lg:p-20 xl:p-32 h-full relative">
         <div>
-          <h1 className="text-white uppercase drop-shadow-3xl sm:hidden md:block sm:text-5xl md:text-9xl sm:text-center sm:w-full">
+          <h1 className="text-white uppercase drop-shadow-3xl sm:text-5x1 md:block sm:text-4xl md:text-8xl sm:text-center sm:w-full">
             VOLTAIC V
           </h1>
         </div>

@@ -36,21 +36,21 @@ function AboutUs() {
               <img
                 src={ob}
                 alt="Oniel Balicoco"
-                className="rounded-full max-w-full h-full mx-auto object-hidden"
+                className="rounded-full max-w-full h-full mx-auto  "
               />
             </div>
             <div className="w-28 h-28 bg-white rounded-full mr-3">
               <img
                 src={kae}
                 alt="Kae Lacap"
-                className="rounded-full max-w-full h-full mx-auto object-hidden"
+                className="rounded-full max-w-full h-full mx-auto  "
               />
             </div>
             <div className="w-28 h-28 bg-white rounded-full mr-3">
               <img
                 src={jha}
                 alt="Jhasset Tipalan"
-                className="rounded-full max-w-full h-full mx-auto object-hidden"
+                className="rounded-full max-w-full h-full mx-auto  "
               />
             </div>
           </div>
@@ -59,14 +59,14 @@ function AboutUs() {
               <img
                 src={niel}
                 alt="Neil Santos"
-                className="rounded-full max-w-full h-full mx-auto object-hidden"
+                className="rounded-full max-w-full h-full mx-auto  "
               />
             </div>
             <div className="w-28 h-28 bg-white rounded-full mr-3">
               <img
                 src={elai}
                 alt="Elaiza Ilagan"
-                className="rounded-full max-w-full h-full mx-auto object-hidden"
+                className="rounded-full max-w-full h-full mx-auto  "
               />
             </div>
           </div>
@@ -75,7 +75,12 @@ function AboutUs() {
           <img
             src={wsm}
             alt="With Sir Mark"
-            className="object-hidden w-full h-full"
+            className="  w-full h-full"
+            style={{
+              maxWidth: '100%',
+              height: 'auto',
+              objectFit: 'contain',
+            }}
           />
         </div>
       </div>
