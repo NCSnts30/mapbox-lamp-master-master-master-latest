@@ -11,6 +11,7 @@ import './css/home.css';
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
+  { width: 550, itemsToShow: 1 },
   { width: 550, itemsToShow: 3, itemsToScroll: 3 },
 ];
 
