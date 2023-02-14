@@ -26,6 +26,9 @@ function Footer() {
           <a href="/login" className="text-white hover:text-gray-400 mr-4">
             <NavLink to="/login">Login</NavLink>
           </a>
+          <a href="/pagination" className="text-white hover:text-gray-400 mr-4">
+            <NavLink to="/pagination">Click Here</NavLink>
+          </a>
         </div>
       </div>
     </footer>
