@@ -91,4 +91,24 @@ nav li {
     margin: 0 4px;
     color: gray;
   }
-  
+  @media (max-width: 425px) {
+    .flex {
+      flex-wrap: wrap;
+    }
+    .hidden {
+      display: none;
+    }
+  }
+  @media (max-width: 320px) {
+    .w-28 {
+      width: 100%;
+      max-width: 100%;
+    }
+    .h-28 {
+      height: auto;
+      max-height: none;
+    }
+    .flex {
+      justify-content: center;
+    }
+  }

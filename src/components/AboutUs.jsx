@@ -31,7 +31,7 @@ function AboutUs() {
               Engr.Mark Melegrito
             </p>
           </div>
-          <div className="flex justify-center hidden md:flex">
+          <div className="flex justify-center">
             <div className="w-28 h-28 bg-white rounded-full mr-3">
               <img
                 src={ob}
@@ -43,26 +43,26 @@ function AboutUs() {
               <img
                 src={kae}
                 alt="Kae Lacap"
-                className="rounded-full max-w-full h-full mx-auto  "
+                className="rounded-full max-w-full h-full mx-auto"
               />
             </div>
-            <div className="w-28 h-28 bg-white rounded-full mr-3">
+            <div className="w-28 h-28 bg-white rounded-full mr-3 hidden md:block">
               <img
                 src={jha}
                 alt="Jhasset Tipalan"
-                className="rounded-full max-w-full h-full mx-auto  "
+                className="rounded-full max-w-full h-full mx-auto"
               />
             </div>
           </div>
-          <div className="flex justify-center mt-3 md:shrink-0 hidden md:flex">
-            <div className="w-28 h-28 bg-white rounded-full mr-3">
+          <div className="flex justify-center hidden md:flex">
+            <div className="w-28 h-28 bg-white rounded-full mr-3 hidden md:block">
               <img
                 src={niel}
                 alt="Neil Santos"
-                className="rounded-full max-w-full h-full mx-auto  "
+                className="rounded-full max-w-full h-full mx-auto"
               />
             </div>
-            <div className="w-28 h-28 bg-white rounded-full mr-3">
+            <div className="w-28 h-28 bg-white rounded-full mr-3 hidden md:block">
               <img
                 src={elai}
                 alt="Elaiza Ilagan"
