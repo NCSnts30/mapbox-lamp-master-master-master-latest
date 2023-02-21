@@ -23,7 +23,7 @@ function AboutUs() {
         </span>
       </div>
       <div className="relative h-screen flex flex-col md:flex-row">
-        <div className="bg-slate-800 w-full md:w-1/2 lg:w-1/2 xl:w-1/2 absolute h-1/2 md:h-auto md:h-1/2 top-0 md:top-14 left-0 md:left-14 text-white text-justify p-6">
+        <div className="bg-slate-800 w-full md:w-1/2 lg:w-1/2 xl:w-1/2 absolute h-1/2 md:h-auto md:h-1/2 top-0 md:top-14 left-0 md:left-14 text-white text-justify p-6 md:shrink-0">
           <p className="text-4xl md:text-5xl lg:text-6xl">OUR TEAM</p>
           <div className="mt-4 mb-4">
             <p className="text-base md:text-lg lg:text-xl">
@@ -39,7 +39,7 @@ function AboutUs() {
                 className="rounded-full max-w-full h-full mx-auto"
               />
             </div>
-            <div className="w-28 h-28 bg-white rounded-full mr-3">
+            <div className="w-28 h-28 bg-white rounded-full mr-3 md:block">
               <img
                 src={kae}
                 alt="Kae Lacap"
@@ -71,12 +71,12 @@ function AboutUs() {
             </div>
           </div>
         </div>
-        <div className="aspect-ratio 1/1 bg-slate-400 w-full md:w-1/2 lg:w-1/2 xl:w-1/2 absolute top-1/2 md:top-80 right-0 md:right-25">
-          <div className="aspect-ratio 1/1 bg-slate-400 w-full h-full">
+        <div className="aspect-ratio 1/1 bg-slate-400 w-full md:w-1/2 lg:w-1/2 xl:w-1/2 absolute top-1/2 md:top-80 right-0 md:right-25 md:shrink-0">
+          <div className="aspect-ratio 1/1 bg-slate-400 w-full h-full md:shrink-0 md:flex">
             <img
               src={wsm}
               alt="With Sir Mark"
-              className="w-full h-full object-cover object-center md:object-contain"
+              className="w-full h-full object-cover object-center md:shrink-0"
             />
           </div>
         </div>

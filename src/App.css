@@ -95,9 +95,6 @@ nav li {
     .flex {
       flex-wrap: wrap;
     }
-    .hidden {
-      display: none;
-    }
   }
   @media (max-width: 320px) {
     .w-28 {
@@ -110,5 +107,9 @@ nav li {
     }
     .flex {
       justify-content: center;
+      flex-wrap: wrap;
+    }
+    .hidden {
+      display: none;
     }
   }
