@@ -46,7 +46,7 @@ function AboutUs() {
                 className="rounded-full max-w-full h-full mx-auto"
               />
             </div>
-            <div className="w-28 h-28 bg-white rounded-full mr-3 hidden md:block">
+            <div className="w-28 h-28 bg-white rounded-full mr-3 md:block">
               <img
                 src={jha}
                 alt="Jhasset Tipalan"
@@ -54,15 +54,15 @@ function AboutUs() {
               />
             </div>
           </div>
-          <div className="flex justify-center hidden md:flex">
-            <div className="w-28 h-28 bg-white rounded-full mr-3 hidden md:block">
+          <div className="flex justify-center md:flex">
+            <div className="w-28 h-28 bg-white rounded-full mr-3 md:block">
               <img
                 src={niel}
                 alt="Neil Santos"
                 className="rounded-full max-w-full h-full mx-auto"
               />
             </div>
-            <div className="w-28 h-28 bg-white rounded-full mr-3 hidden md:block">
+            <div className="w-28 h-28 bg-white rounded-full mr-3 md:block">
               <img
                 src={elai}
                 alt="Elaiza Ilagan"
