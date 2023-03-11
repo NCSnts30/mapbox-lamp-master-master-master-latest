@@ -1,3 +1,7 @@
+/* eslint-disable react/function-component-definition */
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable arrow-body-style */
+
 import React from 'react';
 import { TbError404 } from 'react-icons/tb';
 

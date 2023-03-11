@@ -16,16 +16,17 @@ const initialState = {
   lamp1: {},
   lamp2: {},
   lamp3: {},
-  place: '',
-  battery_voltage: 0,
-  battery_current: 0,
-  battery_power: 0,
-  solar_voltage: 0,
-  solar_current: 0,
-  solar_power: 0,
+  batteryCurrent: 0,
+  batteryPower: 0,
+  batteryVoltage: 0,
+  isOnline: 0,
   luminosity: 0,
-  temperature: 0,
   rssi: 0,
+  solarCurrent: 0,
+  solarPower: 0,
+  solarVoltage: 0,
+  temperature: 0,
+  receivedAt: null,
   actionId: -1,
   isOpen: true,
 };
@@ -59,36 +60,38 @@ function MapProvider({ children }) {
     dispatch({ type: 'FETCHING' });
     try {
       await axios
-        .get(`${import.meta.env.VITE_API_ENDPOINT}/Node1`)
+        .get(`${import.meta.env.VITE_API_ENDPOINT}?nodeId=1`)
         .then((resp) => {
           let data = [];
           data = resp.data;
           const {
-            place,
-            battery_voltage,
-            battery_current,
-            battery_power,
-            solar_voltage,
-            solar_current,
-            solar_power,
+            batteryCurrent,
+            batteryPower,
+            batteryVoltage,
+            isOnline,
             luminosity,
-            temperature,
             rssi,
+            solarCurrent,
+            solarPower,
+            solarVoltage,
+            temperature,
+            receivedAt,
           } = data;
 
           dispatch({
             type: 'FETCHED',
             lamp1: data,
-            place,
-            battery_voltage,
-            battery_current,
-            battery_power,
-            solar_voltage,
-            solar_current,
-            solar_power,
+            batteryCurrent,
+            batteryPower,
+            batteryVoltage,
+            isOnline,
             luminosity,
-            temperature,
             rssi,
+            solarCurrent,
+            solarPower,
+            solarVoltage,
+            temperature,
+            receivedAt,
           });
         });
       return lamp1;
@@ -104,35 +107,37 @@ function MapProvider({ children }) {
     dispatch({ type: 'FETCHING' });
     try {
       await axios
-        .get(`${import.meta.env.VITE_API_ENDPOINT}/Node2`)
+        .get(`${import.meta.env.VITE_API_ENDPOINT}?nodeId=2`)
         .then((resp) => {
           let data = [];
           data = resp.data;
           const {
-            place,
-            battery_voltage,
-            battery_current,
-            battery_power,
-            solar_voltage,
-            solar_current,
-            solar_power,
+            batteryCurrent,
+            batteryPower,
+            batteryVoltage,
+            isOnline,
             luminosity,
-            temperature,
             rssi,
+            solarCurrent,
+            solarPower,
+            solarVoltage,
+            temperature,
+            receivedAt,
           } = data;
           dispatch({
             type: 'FETCHED',
             lamp2: data,
-            place,
-            battery_voltage,
-            battery_current,
-            battery_power,
-            solar_voltage,
-            solar_current,
-            solar_power,
+            batteryCurrent,
+            batteryPower,
+            batteryVoltage,
+            isOnline,
             luminosity,
-            temperature,
             rssi,
+            solarCurrent,
+            solarPower,
+            solarVoltage,
+            temperature,
+            receivedAt,
           });
         });
       return lamp2;
@@ -148,36 +153,38 @@ function MapProvider({ children }) {
     dispatch({ type: 'FETCHING' });
     try {
       await axios
-        .get(`${import.meta.env.VITE_API_ENDPOINT}/Node3`)
+        .get(`${import.meta.env.VITE_API_ENDPOINT}?nodeId=3`)
         .then((resp) => {
           let data = [];
           data = resp.data;
           const {
-            place,
-            battery_voltage,
-            battery_current,
-            battery_power,
-            solar_voltage,
-            solar_current,
-            solar_power,
+            batteryCurrent,
+            batteryPower,
+            batteryVoltage,
+            isOnline,
             luminosity,
-            temperature,
             rssi,
+            solarCurrent,
+            solarPower,
+            solarVoltage,
+            temperature,
+            receivedAt,
           } = data;
 
           dispatch({
             type: 'FETCHED',
             lamp3: data,
-            place,
-            battery_voltage,
-            battery_current,
-            battery_power,
-            solar_voltage,
-            solar_current,
-            solar_power,
+            batteryCurrent,
+            batteryPower,
+            batteryVoltage,
+            isOnline,
             luminosity,
-            temperature,
             rssi,
+            solarCurrent,
+            solarPower,
+            solarVoltage,
+            temperature,
+            receivedAt,
           });
         });
       return lamp3;

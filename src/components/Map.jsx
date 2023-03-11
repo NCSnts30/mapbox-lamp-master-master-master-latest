@@ -16,15 +16,17 @@ function MapComponent() {
   const [popupData, setPopupData] = useState({
     long: 0,
     lat: 0,
-    battery_voltage: 0,
-    battery_current: 0,
-    battery_power: 0,
-    solar_voltage: 0,
-    solar_current: 0,
-    solar_power: 0,
+    batteryCurrent: 0,
+    batteryPower: 0,
+    batteryVoltage: 0,
+    isOnline: 0,
     luminosity: 0,
-    temperature: 0,
     rssi: 0,
+    solarCurrent: 0,
+    solarPower: 0,
+    solarVoltage: 0,
+    temperature: 0,
+    receivedAt: 0,
   });
 
   const [popUpLongAndLat, setPopUpLongAndLat] = useState({
@@ -36,90 +38,96 @@ function MapComponent() {
 
   useEffect(() => {
     const {
-      place,
-      battery_voltage,
-      battery_current,
-      battery_power,
-      solar_voltage,
-      solar_current,
-      solar_power,
+      batteryCurrent,
+      batteryPower,
+      batteryVoltage,
+      isOnline,
       luminosity,
-      temperature,
       rssi,
+      solarCurrent,
+      solarPower,
+      solarVoltage,
+      temperature,
+      receivedAt,
     } = lamp1;
 
     if (showPopup) {
       setPopupData({
-        place,
-        battery_voltage,
-        battery_current,
-        battery_power,
-        solar_voltage,
-        solar_current,
-        solar_power,
+        batteryCurrent,
+        batteryPower,
+        batteryVoltage,
+        isOnline,
         luminosity,
-        temperature,
         rssi,
+        solarCurrent,
+        solarPower,
+        solarVoltage,
+        temperature,
+        receivedAt,
       });
     }
   }, [lamp1, showPopup, popUpLongAndLat]);
 
   useEffect(() => {
     const {
-      place,
-      battery_voltage,
-      battery_current,
-      battery_power,
-      solar_voltage,
-      solar_current,
-      solar_power,
+      batteryCurrent,
+      batteryPower,
+      batteryVoltage,
+      isOnline,
       luminosity,
-      temperature,
       rssi,
+      solarCurrent,
+      solarPower,
+      solarVoltage,
+      temperature,
+      receivedAt,
     } = lamp2;
 
     if (showPopup) {
       setPopupData({
-        place,
-        battery_voltage,
-        battery_current,
-        battery_power,
-        solar_voltage,
-        solar_current,
-        solar_power,
+        batteryCurrent,
+        batteryPower,
+        batteryVoltage,
+        isOnline,
         luminosity,
-        temperature,
         rssi,
+        solarCurrent,
+        solarPower,
+        solarVoltage,
+        temperature,
+        receivedAt,
       });
     }
   }, [lamp2, showPopup, popUpLongAndLat]);
 
   useEffect(() => {
     const {
-      place,
-      battery_voltage,
-      battery_current,
-      battery_power,
-      solar_voltage,
-      solar_current,
-      solar_power,
+      batteryCurrent,
+      batteryPower,
+      batteryVoltage,
+      isOnline,
       luminosity,
-      temperature,
       rssi,
+      solarCurrent,
+      solarPower,
+      solarVoltage,
+      temperature,
+      receivedAt,
     } = lamp3;
 
     if (showPopup) {
       setPopupData({
-        place,
-        battery_voltage,
-        battery_current,
-        battery_power,
-        solar_voltage,
-        solar_current,
-        solar_power,
+        batteryCurrent,
+        batteryPower,
+        batteryVoltage,
+        isOnline,
         luminosity,
-        temperature,
         rssi,
+        solarCurrent,
+        solarPower,
+        solarVoltage,
+        temperature,
+        receivedAt,
       });
     }
   }, [lamp3, showPopup, popUpLongAndLat]);
@@ -186,7 +194,9 @@ function MapComponent() {
             }}
             closeOnClick={false}
           >
-            <p className="text-center font-extrabold">{popupData.place}</p>
+            <p className="text-center font-extrabold">
+              ONLINE STATUS: {popupData.isOnline ? 'Online' : 'Offline'}
+            </p>
             <p>
               Temperature:
               <span className="font-extrabold">
@@ -196,37 +206,37 @@ function MapComponent() {
             <p>
               Battery Voltage:
               <span className="font-extrabold">
-                {Number(popupData.battery_voltage).toFixed(2)}
+                {Number(popupData.batteryVoltage).toFixed(2)}
               </span>
             </p>
             <p>
               Battery Power:
               <span className="font-extrabold">
-                {Number(popupData.battery_power).toFixed(4)}
+                {Number(popupData.batteryPower).toFixed(4)}
               </span>
             </p>
             <p>
               Battery Current:
               <span className="font-extrabold">
-                {Number(popupData.battery_current).toFixed(2)}
+                {Number(popupData.batteryCurrent).toFixed(2)}
               </span>
             </p>
             <p>
               Solar Voltage:
               <span className="font-extrabold">
-                {Number(popupData.solar_voltage).toFixed(2)}
+                {Number(popupData.solarVoltage).toFixed(2)}
               </span>
             </p>
             <p>
               Solar Power:
               <span className="font-extrabold">
-                {Number(popupData.solar_power).toFixed(4)}
+                {Number(popupData.solarPower).toFixed(4)}
               </span>
             </p>
             <p>
               Solar Current:
               <span className="font-extrabold">
-                {Number(popupData.solar_current).toFixed(2)}
+                {Number(popupData.solarCurrent).toFixed(2)}
               </span>
             </p>
             <p>
