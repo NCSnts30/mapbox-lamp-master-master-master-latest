@@ -7,7 +7,7 @@ import { CiExport } from 'react-icons/ci';
 import { useMap } from '../context/MapContext';
 
 const ExportToExcel = () => {
-  const { exportSummary } = useMap();
+  const { exportSummary, exportSummaryApril } = useMap();
   return (
     <div>
       <button
