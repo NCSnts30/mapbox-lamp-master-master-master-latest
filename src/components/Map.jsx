@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Map, { Marker, Popup } from 'react-map-gl';
 import { BeatLoader } from 'react-spinners';
+import { RiRadioButtonLine } from 'react-icons/ri';
 import streetLamp from '../assets/street-lamp.png';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useMap } from '../context/MapContext';
@@ -206,8 +207,16 @@ function MapComponent() {
             }}
             closeOnClick={false}
           >
-            <p className="text-center font-extrabold">
-              ONLINE STATUS: {popupData.isOnline ? 'Online' : 'Offline'}
+            <p className="text-left font-extrabold">
+              {popupData.isOnline ? (
+                <span className="flex gap-1">
+                  <RiRadioButtonLine color="green" /> Online
+                </span>
+              ) : (
+                <span className="flex items-center  gap-1  ">
+                  <RiRadioButtonLine color="red" /> Offline
+                </span>
+              )}
             </p>
             <p>
               Temperature:
