@@ -117,13 +117,15 @@ function Main() {
             </div>
           </div>
           <div className="col-xl-6">
-            <div className="card mb-4">
+            <div className="card mb-4 ">
               <div className="card-header">
                 <i className="fas fa-chart-bar me-1" />
                 List
               </div>
               <Table />
-              <ExportToExcel />
+              <div className="flex justify-center">
+                <ExportToExcel />
+              </div>
             </div>
           </div>
         </div>

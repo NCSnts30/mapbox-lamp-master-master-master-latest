@@ -21,6 +21,17 @@ const ExportToExcel = () => {
           <CiExport /> <p>Export Summary</p>
         </span>
       </button>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          exportSummaryApril();
+        }}
+        className="px-6 py-4 bg-green-700 hover:bg-green-900 rounded-xl  shadow-xl"
+      >
+        <span className="flex place-items-center gap-2 text-white">
+          <CiExport /> <p>Export Summary (April)</p>
+        </span>
+      </button>
     </div>
   );
 };

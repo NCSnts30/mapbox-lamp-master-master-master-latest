@@ -76,6 +76,27 @@ function MapProvider({ children }) {
     }
   }, []);
 
+  const exportSummaryApril = useCallback(async () => {
+    dispatch({ type: 'FETCHING' });
+    try {
+      await get(`${import.meta.env.VITE_API_ENDPOINT}/export?date=april`).then(
+        (res) => {
+          const { url } = res.data;
+          console.log(url);
+          window.open(url, '_blank');
+        }
+      );
+      dispatch({
+        type: 'FETCHED',
+      });
+    } catch (e) {
+      dispatch({
+        type: 'ERROR',
+        errorMsg: 'Something went wrong while exporting summary.',
+      });
+    }
+  }, []);
+
   const getLamp1 = useCallback(async () => {
     dispatch({ type: 'FETCHING' });
     try {
@@ -252,6 +273,7 @@ function MapProvider({ children }) {
         getLamp2,
         getLamp3,
         exportSummary,
+        exportSummaryApril,
       }}
     >
       {children}
