@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Map, { Marker, Popup } from 'react-map-gl';
+import { BeatLoader } from 'react-spinners';
 import streetLamp from '../assets/street-lamp.png';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useMap } from '../context/MapContext';
@@ -26,7 +27,7 @@ function MapComponent() {
     solarPower: 0,
     solarVoltage: 0,
     temperature: 0,
-    receivedAt: 0,
+    receivedAt: null,
   });
 
   const [popUpLongAndLat, setPopUpLongAndLat] = useState({
@@ -134,6 +135,17 @@ function MapComponent() {
 
   return (
     <div className="flex p-8">
+      {isLoading && (
+        <div className="fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-50 overflow-hidden bg-gray-700 opacity-75 flex flex-col items-center justify-center">
+          <BeatLoader
+            className="text-gray-800"
+            loading={isLoading}
+            size={50}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        </div>
+      )}
       <Map
         {...viewport}
         onMove={(evt) => setViewPort(evt.viewState)}
@@ -244,6 +256,10 @@ function MapComponent() {
               <span className="font-extrabold">
                 {Number(popupData.luminosity).toFixed(2)}
               </span>
+            </p>
+            <p>
+              Last Updated:
+              <span className="font-extrabold">{popupData.receivedAt}</span>
             </p>
           </Popup>
         )}

@@ -9,6 +9,8 @@ import ContactUs from './components/ContactUs';
 import AboutUs from './components/AboutUs';
 import NotFound from './components/404/NotFound';
 import Table from './components/Table';
+import Footer from './components/Footer';
+
 function App() {
   return (
     <div className="App">
@@ -24,6 +26,7 @@ function App() {
           <Route path="/pagination" element={<Table />} />
         </Routes>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -10,9 +10,7 @@ function Login() {
 
       <div className="bg-gray-900 flex flex-col justify-center">
         <form className="max-w-[400px] w-full mx-auto bg-gray-800 p-8 px-8 rounded-lg">
-          <h2 className="text-6x1 dark:text-white font-bold text-center">
-            SIGN IN
-          </h2>
+          <h2 className="text-6x1 text-white font-bold text-center">SIGN IN</h2>
           <div className="flex flex-col text-gray-400 py-2">
             <label> Email </label>
             <input
@@ -33,7 +31,10 @@ function Login() {
             </p>
             <p>Forgot Password</p>
           </div>
-          <button className="w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal 500/40 text white font-semibold rounded-lg">
+          <button
+            type="submit"
+            className="w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal 500/40 text-white font-semibold rounded-lg"
+          >
             Submit
           </button>
         </form>

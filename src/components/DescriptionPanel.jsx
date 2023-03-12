@@ -20,7 +20,7 @@ function DescriptionPanel({ volts, power, current, luminosity, place }) {
         <p className="text-white">{place}</p>
       </div>
       <div className="flex space-x-3 bg-neutral-600 w-full p-4 justify-center items-center">
-        <div className="shadow w-50 px-2 h-20 bg-neutral-100  shadow-black rounded-lg bg-zinc-900 text-white border-4">
+        <div className="shadow w-50 px-2 h-20 shadow-black rounded-lg bg-zinc-900 text-white border-4">
           <p className="text-center">VOLTS</p>
           <p className="text-center text-3xl">
             <span className={volts >= 10 ? 'text-white' : 'text-red-500'}>

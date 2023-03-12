@@ -6,7 +6,6 @@ import lamp3 from '../assets/C.jpg';
 import lamp4 from '../assets/D.jpg';
 import lamp5 from '../assets/E.jpg';
 import AboutUs from './AboutUs';
-import Footer from './Footer';
 import './css/home.css';
 
 const breakPoints = [
@@ -52,7 +51,6 @@ function Home() {
         </Carousel>
       </div>
       <AboutUs />
-      <Footer />
     </div>
   );
 }

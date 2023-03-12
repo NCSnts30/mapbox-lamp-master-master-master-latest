@@ -5,14 +5,15 @@ import React, {
   useCallback,
   useEffect,
 } from 'react';
-import axios from 'axios';
+
+import { get } from '../api';
 
 const MapContext = createContext();
 
 const useMap = () => useContext(MapContext);
 
 const initialState = {
-  isLoading: true,
+  isLoading: false,
   lamp1: {},
   lamp2: {},
   lamp3: {},
@@ -56,12 +57,30 @@ function MapProvider({ children }) {
 
   const { isLoading, lamp1, lamp2, lamp3 } = state;
 
+  const exportSummary = useCallback(async () => {
+    dispatch({ type: 'FETCHING' });
+    try {
+      await get(`${import.meta.env.VITE_API_ENDPOINT}/export`).then((res) => {
+        const { url } = res.data;
+        console.log(url);
+        window.open(url, '_blank');
+      });
+      dispatch({
+        type: 'FETCHED',
+      });
+    } catch (e) {
+      dispatch({
+        type: 'ERROR',
+        errorMsg: 'Something went wrong while exporting summary.',
+      });
+    }
+  }, []);
+
   const getLamp1 = useCallback(async () => {
     dispatch({ type: 'FETCHING' });
     try {
-      await axios
-        .get(`${import.meta.env.VITE_API_ENDPOINT}?nodeId=1`)
-        .then((resp) => {
+      await get(`${import.meta.env.VITE_API_ENDPOINT}?nodeId=1`).then(
+        (resp) => {
           let data = [];
           data = resp.data;
           const {
@@ -93,7 +112,8 @@ function MapProvider({ children }) {
             temperature,
             receivedAt,
           });
-        });
+        }
+      );
       return lamp1;
     } catch (e) {
       dispatch({
@@ -106,9 +126,8 @@ function MapProvider({ children }) {
   const getLamp2 = useCallback(async () => {
     dispatch({ type: 'FETCHING' });
     try {
-      await axios
-        .get(`${import.meta.env.VITE_API_ENDPOINT}?nodeId=2`)
-        .then((resp) => {
+      await get(`${import.meta.env.VITE_API_ENDPOINT}?nodeId=2`).then(
+        (resp) => {
           let data = [];
           data = resp.data;
           const {
@@ -139,7 +158,8 @@ function MapProvider({ children }) {
             temperature,
             receivedAt,
           });
-        });
+        }
+      );
       return lamp2;
     } catch (e) {
       dispatch({
@@ -152,9 +172,8 @@ function MapProvider({ children }) {
   const getLamp3 = useCallback(async () => {
     dispatch({ type: 'FETCHING' });
     try {
-      await axios
-        .get(`${import.meta.env.VITE_API_ENDPOINT}?nodeId=3`)
-        .then((resp) => {
+      await get(`${import.meta.env.VITE_API_ENDPOINT}?nodeId=3`).then(
+        (resp) => {
           let data = [];
           data = resp.data;
           const {
@@ -186,7 +205,8 @@ function MapProvider({ children }) {
             temperature,
             receivedAt,
           });
-        });
+        }
+      );
       return lamp3;
     } catch (e) {
       dispatch({
@@ -225,7 +245,14 @@ function MapProvider({ children }) {
 
   return (
     <MapContext.Provider
-      value={{ ...state, dispatch, getLamp1, getLamp2, getLamp3 }}
+      value={{
+        ...state,
+        dispatch,
+        getLamp1,
+        getLamp2,
+        getLamp3,
+        exportSummary,
+      }}
     >
       {children}
     </MapContext.Provider>

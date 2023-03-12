@@ -9,19 +9,7 @@ const headers = {
 };
 
 const get = (url) => {
-  return axios
-    .get(url, headers)
-    .then((response) => {
-      // handle success
-      console.log(response);
-    })
-    .catch((error) => {
-      // handle error
-      console.log(error);
-    })
-    .finally(() => {
-      // always executed
-    });
+  return axios.get(url, headers);
 };
 
 export { get };
