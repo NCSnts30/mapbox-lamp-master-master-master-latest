@@ -17,6 +17,7 @@ const initialState = {
   lamp1: {},
   lamp2: {},
   lamp3: {},
+  nodeId: '',
   batteryCurrent: 0,
   batteryPower: 0,
   batteryVoltage: 0,
@@ -30,6 +31,7 @@ const initialState = {
   receivedAt: null,
   actionId: -1,
   isOpen: true,
+  lists: [],
 };
 
 function reducer(state, action) {
@@ -55,31 +57,38 @@ function reducer(state, action) {
 function MapProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const { isLoading, lamp1, lamp2, lamp3 } = state;
+  const { isLoading, lamp1, lamp2, lamp3, lists } = state;
 
-  const exportSummary = useCallback(async () => {
+  const list = useCallback(async (nodeId, limit = 9999) => {
     dispatch({ type: 'FETCHING' });
     try {
-      await get(`${import.meta.env.VITE_API_ENDPOINT}/export`).then((res) => {
-        const { url } = res.data;
-        console.log(url);
-        window.open(url, '_blank');
+      let allData = [];
+      await get(
+        `${
+          import.meta.env.VITE_API_ENDPOINT
+        }/list?limit=${limit}&nodeId=${encodeURIComponent(nodeId)}`
+      ).then((res) => {
+        console.log('list', res.data);
+        allData = res.data;
       });
+
       dispatch({
         type: 'FETCHED',
+        lists: allData,
       });
+      return lists;
     } catch (e) {
       dispatch({
         type: 'ERROR',
-        errorMsg: 'Something went wrong while exporting summary.',
+        errorMsg: 'Something went wrong while fetching list.',
       });
     }
   }, []);
 
-  const exportSummaryApril = useCallback(async () => {
+  const exportSummary = useCallback(async () => {
     dispatch({ type: 'FETCHING' });
     try {
-      await get(`${import.meta.env.VITE_API_ENDPOINT}/export?date=april`).then(
+      await get(`${import.meta.env.VITE_API_ENDPOINT}/export?limit=9999`).then(
         (res) => {
           const { url } = res.data;
           console.log(url);
@@ -116,6 +125,7 @@ function MapProvider({ children }) {
             solarVoltage,
             temperature,
             receivedAt,
+            nodeId,
           } = data;
 
           dispatch({
@@ -132,6 +142,8 @@ function MapProvider({ children }) {
             solarVoltage,
             temperature,
             receivedAt,
+            nodeId,
+            lists,
           });
         }
       );
@@ -163,6 +175,7 @@ function MapProvider({ children }) {
             solarVoltage,
             temperature,
             receivedAt,
+            nodeId,
           } = data;
           dispatch({
             type: 'FETCHED',
@@ -178,6 +191,8 @@ function MapProvider({ children }) {
             solarVoltage,
             temperature,
             receivedAt,
+            nodeId,
+            lists,
           });
         }
       );
@@ -209,6 +224,7 @@ function MapProvider({ children }) {
             solarVoltage,
             temperature,
             receivedAt,
+            nodeId,
           } = data;
 
           dispatch({
@@ -225,6 +241,8 @@ function MapProvider({ children }) {
             solarVoltage,
             temperature,
             receivedAt,
+            nodeId,
+            lists,
           });
         }
       );
@@ -245,6 +263,15 @@ function MapProvider({ children }) {
       fetchManilaLamp();
     }
   }, [getLamp1, lamp1]);
+
+  useEffect(() => {
+    async function fetchAllLists() {
+      await list();
+    }
+    if (!lists && !lists.length > 0) {
+      fetchAllLists();
+    }
+  }, [list, lists]);
 
   useEffect(() => {
     async function fetchMakatiLamp() {
@@ -273,7 +300,7 @@ function MapProvider({ children }) {
         getLamp2,
         getLamp3,
         exportSummary,
-        exportSummaryApril,
+        list,
       }}
     >
       {children}

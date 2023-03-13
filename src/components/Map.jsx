@@ -7,7 +7,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { useMap } from '../context/MapContext';
 
 function MapComponent() {
-  const { isLoading, lamp1, lamp2, lamp3, getLamp1, getLamp2, getLamp3 } =
+  const { isLoading, lamp1, lamp2, lamp3, getLamp1, getLamp2, getLamp3, list } =
     useMap();
 
   const [viewport, setViewPort] = useState({
@@ -51,6 +51,7 @@ function MapComponent() {
       solarVoltage,
       temperature,
       receivedAt,
+      nodeId,
     } = lamp1;
 
     if (showPopup) {
@@ -65,10 +66,13 @@ function MapComponent() {
         solarPower,
         solarVoltage,
         temperature,
+        nodeId,
         receivedAt,
       });
+      const limit = 10;
+      list(nodeId, limit);
     }
-  }, [lamp1, showPopup, popUpLongAndLat]);
+  }, [lamp1]);
 
   useEffect(() => {
     const {
@@ -83,6 +87,7 @@ function MapComponent() {
       solarVoltage,
       temperature,
       receivedAt,
+      nodeId,
     } = lamp2;
 
     if (showPopup) {
@@ -96,11 +101,15 @@ function MapComponent() {
         solarCurrent,
         solarPower,
         solarVoltage,
+        nodeId,
         temperature,
         receivedAt,
       });
+      const limit = 10;
+
+      list(nodeId, limit);
     }
-  }, [lamp2, showPopup, popUpLongAndLat]);
+  }, [lamp2]);
 
   useEffect(() => {
     const {
@@ -114,6 +123,7 @@ function MapComponent() {
       solarPower,
       solarVoltage,
       temperature,
+      nodeId,
       receivedAt,
     } = lamp3;
 
@@ -129,10 +139,14 @@ function MapComponent() {
         solarPower,
         solarVoltage,
         temperature,
+        nodeId,
         receivedAt,
       });
     }
-  }, [lamp3, showPopup, popUpLongAndLat]);
+    const limit = 10;
+
+    list(nodeId, limit);
+  }, [lamp3]);
 
   return (
     <div className="flex p-8">

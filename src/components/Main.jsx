@@ -3,6 +3,7 @@ import Map from './Map';
 import { useMap } from '../context/MapContext';
 import Table from './Table';
 import ExportToExcel from './ExportToExcel';
+import Graphs from './Graphs';
 
 function Main() {
   const {
@@ -122,7 +123,7 @@ function Main() {
                 <i className="fas fa-chart-bar me-1" />
                 List
               </div>
-              <Table />
+              <Graphs />
               <div className="flex justify-center">
                 <ExportToExcel />
               </div>
