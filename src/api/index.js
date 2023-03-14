@@ -4,7 +4,11 @@
 import axios from 'axios';
 
 import getCookie from './getCookie';
-
+const headers = {
+  'Access-Control-Allow-Origin': '*',
+  'Content-Type': 'application/json',
+  Authorization: `Bearer ${getCookie('user_token')}`,
+};
 const get = async ({ url }) => {
   let ret = null;
 
@@ -28,17 +32,7 @@ const get = async ({ url }) => {
 
 const post = async ({ url, data }) => {
   let ret = null;
-  ret = await axios.post(
-    url,
-    { ...data },
-    {
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${getCookie('user_token')}`,
-      },
-    }
-  );
+  ret = await axios.post(url, { ...data }, headers);
   return ret;
 };
 
