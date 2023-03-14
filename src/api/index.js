@@ -3,13 +3,43 @@
 
 import axios from 'axios';
 
-const headers = {
-  'Access-Control-Allow-Origin': '*',
-  'Content-Type': 'application/json',
+import getCookie from './getCookie';
+
+const get = async ({ url }) => {
+  let ret = null;
+
+  ret = await axios
+    .get(url, {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${getCookie('user_token')}`,
+      },
+    })
+    .then((response) => {
+      return response;
+    })
+    .catch((error) => {
+      return error.response;
+    });
+
+  return ret;
 };
 
-const get = (url) => {
-  return axios.get(url, headers);
+const post = async ({ url, data }) => {
+  let ret = null;
+  ret = await axios.post(
+    url,
+    { ...data },
+    {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${getCookie('user_token')}`,
+      },
+    }
+  );
+  return ret;
 };
 
-export { get };
+export { get, post };

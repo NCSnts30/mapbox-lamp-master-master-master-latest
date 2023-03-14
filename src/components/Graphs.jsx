@@ -26,7 +26,7 @@ const Graphs = () => {
     Legend
   );
   const optionsLamp = {
-    responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'top',
@@ -39,7 +39,7 @@ const Graphs = () => {
   };
 
   const optionsBatteryVoltage = {
-    responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'top',
@@ -51,7 +51,7 @@ const Graphs = () => {
     },
   };
   const optionsBatteryPower = {
-    responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'top',
@@ -63,7 +63,7 @@ const Graphs = () => {
     },
   };
   const optionsBatteryCurrent = {
-    responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'top',
@@ -147,37 +147,15 @@ const Graphs = () => {
       },
     ],
   };
-  const dataBattPower = {
-    labels: receivedAt,
-    datasets: [
-      {
-        label: 'Battery Power',
-        data: batteryPower,
-        fill: false,
-        borderColor: 'rgb(178, 102, 255)',
-        tension: 0.1,
-      },
-    ],
-  };
-  const dataBattCurrent = {
-    labels: receivedAt,
-    datasets: [
-      {
-        label: 'Battery Current',
-        data: batteryCurrent,
-        fill: false,
-        borderColor: 'rgb(178, 102, 255)',
-        tension: 0.1,
-      },
-    ],
-  };
 
   return (
-    <div>
-      <Line options={optionsLamp} data={data} />
-      <Line options={optionsBatteryVoltage} data={dataBattVoltage} />
-      <Line options={optionsBatteryPower} data={dataBattPower} />
-      <Line options={optionsBatteryCurrent} data={dataBattCurrent} />
+    <div className=" h-full">
+      <div className=" h-80">
+        <Line options={optionsLamp} data={data} />
+      </div>
+      <div className=" h-80">
+        <Line options={optionsBatteryVoltage} data={dataBattVoltage} />
+      </div>
     </div>
   );
 };

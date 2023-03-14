@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Map from './Map';
 import { useMap } from '../context/MapContext';
 import Table from './Table';
 import ExportToExcel from './ExportToExcel';
 import Graphs from './Graphs';
+import Graphs2 from './Graphs2';
 
 function Main() {
   const {
@@ -19,7 +20,16 @@ function Main() {
     temperature,
     receivedAt,
   } = useMap();
+  const [isLoggedIn, setIsLoggedIn] = useState();
 
+  useEffect(() => {
+    const ili = localStorage.getItem('isLoggedIn');
+    if (ili) {
+      setIsLoggedIn(true);
+    } else {
+      window.location.replace('/login');
+    }
+  });
   return (
     <main>
       <div className="container-fluid px-4" id="dashboard">
@@ -113,6 +123,7 @@ function Main() {
               <div className="card-body">
                 <div>
                   <Map />
+                  <Graphs2 />
                 </div>
               </div>
             </div>

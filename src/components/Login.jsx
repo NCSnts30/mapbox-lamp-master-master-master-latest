@@ -1,44 +1,106 @@
-import React from 'react';
+import React, { useState } from 'react';
 import loginbg from '../assets/loginbg.jpg';
+import { useForm } from 'react-hook-form';
+import { FlexboxGrid, Form, InputGroup, Button, Col } from 'rsuite';
+import { useLogin } from '../context/LoginContext';
+import toast, { Toaster } from 'react-hot-toast';
+import { BeatLoader } from 'react-spinners';
 
 function Login() {
+  const { handleLogin, isLoading } = useLogin();
+  const { handleSubmit } = useForm();
+  const [visible, setVisible] = useState(false);
+  const [values, setValues] = useState({});
+
+  const handleInputChange = (v, e) => {
+    const { name } = e.target;
+
+    setValues({
+      ...values,
+      [name]: v,
+    });
+  };
+  console.log(values);
+  const onSubmit = async () => {
+    if (!values.password) {
+      toast.error('Password is required!');
+    }
+    if (!values.username) {
+      toast.error('Username is required!');
+    }
+    if (values.username && values.password) {
+      handleLogin(values);
+    }
+  };
+
+  const showPass = () => {
+    setVisible(!visible);
+  };
+
   return (
     <div className="grid grid-cols sm:grid-cols-2 h-screen w-full">
+      {isLoading && (
+        <div className="fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-50 overflow-hidden bg-gray-700 opacity-75 flex flex-col items-center justify-center">
+          <BeatLoader
+            className="text-gray-800"
+            loading={isLoading}
+            size={50}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        </div>
+      )}
       <div className="hidden sm:block">
         <img className="w-full h-full object cover" src={loginbg} alt="" />
       </div>
 
-      <div className="bg-gray-900 flex flex-col justify-center">
-        <form className="max-w-[400px] w-full mx-auto bg-gray-800 p-8 px-8 rounded-lg">
-          <h2 className="text-6x1 text-white font-bold text-center">SIGN IN</h2>
-          <div className="flex flex-col text-gray-400 py-2">
-            <label> Email </label>
-            <input
-              className="rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none"
-              type="email"
-            />
-          </div>
-          <div className="flex flex-col text-gray-400 py-2">
-            <label> Password </label>
-            <input
-              className="rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none"
-              type="password"
-            />
-          </div>
-          <div className="flex justify-between text-gray-400">
-            <p className="flex items-center">
-              <input className="mr-2" type="checkbox" /> Remember Me
-            </p>
-            <p>Forgot Password</p>
-          </div>
-          <button
-            type="submit"
-            className="w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal 500/40 text-white font-semibold rounded-lg"
-          >
-            Submit
-          </button>
-        </form>
-      </div>
+      <Toaster />
+      <FlexboxGrid>
+        <FlexboxGrid.Item
+          as={Col}
+          colspan={24}
+          md={11}
+          className="a8-logo"
+        ></FlexboxGrid.Item>
+        <FlexboxGrid.Item as={Col} colspan={24} md={13} className="login-form">
+          <p className="title">Voltaic Login </p>
+
+          <Form onSubmit={handleSubmit(onSubmit)}>
+            <Form.Group controlId={'username'}>
+              <InputGroup inside>
+                <Form.Control
+                  name="username"
+                  placeholder="Username"
+                  onChange={(v, e) => handleInputChange(v, e)}
+                />
+                <InputGroup.Addon></InputGroup.Addon>
+              </InputGroup>
+            </Form.Group>
+            <Form.Group controlId={'password'}>
+              <InputGroup inside>
+                <Form.Control
+                  name="password"
+                  placeholder="Password"
+                  type={visible ? 'text' : 'password'}
+                  onChange={(v, e) => handleInputChange(v, e)}
+                />
+              </InputGroup>
+            </Form.Group>
+
+            {/* <p className='reset'>Reset Password?</p> */}
+
+            <Button
+              loading={isLoading}
+              disabled={isLoading}
+              type="submit"
+              className="custom-btn btn-green"
+              block
+            >
+              LOGIN
+            </Button>
+          </Form>
+        </FlexboxGrid.Item>
+      </FlexboxGrid>
     </div>
   );
 }

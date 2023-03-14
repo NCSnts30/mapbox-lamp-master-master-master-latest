@@ -7,6 +7,7 @@ import React, {
 } from 'react';
 
 import { get } from '../api';
+import toast, { Toaster } from 'react-hot-toast';
 
 const MapContext = createContext();
 
@@ -44,6 +45,8 @@ function reducer(state, action) {
     case 'FETCHED': {
       return { ...state, isLoading: false, ...payload, actionId: -1 };
     }
+    case 'ERROR':
+      return { ...state, isLoading: false };
 
     case 'VIEW_LAMPS': {
       return { ...state, isOpen: true, actionId: payload.id };
@@ -63,19 +66,29 @@ function MapProvider({ children }) {
     dispatch({ type: 'FETCHING' });
     try {
       let allData = [];
-      await get(
-        `${
+      const request = {
+        url: `${
           import.meta.env.VITE_API_ENDPOINT
-        }/list?limit=${limit}&nodeId=${encodeURIComponent(nodeId)}`
-      ).then((res) => {
+        }/voltaic/list?limit=${limit}&nodeId=${encodeURIComponent(nodeId)}`,
+        data,
+      };
+      resp = await get(request);
+
+      if ([200].includes(resp.status)) {
         console.log('list', res.data);
         allData = res.data;
-      });
+        dispatch({
+          type: 'FETCHED',
+          lists: allData,
+        });
+      } else {
+        dispatch({
+          type: 'ERROR',
+          errorMsg: 'Something went wrong ',
+        });
+        toast.error('Session Expired...');
+      }
 
-      dispatch({
-        type: 'FETCHED',
-        lists: allData,
-      });
       return lists;
     } catch (e) {
       dispatch({
@@ -88,13 +101,13 @@ function MapProvider({ children }) {
   const exportSummary = useCallback(async () => {
     dispatch({ type: 'FETCHING' });
     try {
-      await get(`${import.meta.env.VITE_API_ENDPOINT}/export?limit=9999`).then(
-        (res) => {
-          const { url } = res.data;
-          console.log(url);
-          window.open(url, '_blank');
-        }
-      );
+      await get(
+        `${import.meta.env.VITE_API_ENDPOINT}/voltaic/export?limit=9999`
+      ).then((res) => {
+        const { url } = res.data;
+        console.log(url);
+        window.open(url, '_blank');
+      });
       dispatch({
         type: 'FETCHED',
       });
@@ -109,44 +122,56 @@ function MapProvider({ children }) {
   const getLamp1 = useCallback(async () => {
     dispatch({ type: 'FETCHING' });
     try {
-      await get(`${import.meta.env.VITE_API_ENDPOINT}?nodeId=1`).then(
-        (resp) => {
-          let data = [];
-          data = resp.data;
-          const {
-            batteryCurrent,
-            batteryPower,
-            batteryVoltage,
-            isOnline,
-            luminosity,
-            rssi,
-            solarCurrent,
-            solarPower,
-            solarVoltage,
-            temperature,
-            receivedAt,
-            nodeId,
-          } = data;
+      const request = {
+        url: `${import.meta.env.VITE_API_ENDPOINT}/voltaic?nodeId=1`,
+      };
+      const resp = await get(request);
+      console.log('res', resp);
 
-          dispatch({
-            type: 'FETCHED',
-            lamp1: data,
-            batteryCurrent,
-            batteryPower,
-            batteryVoltage,
-            isOnline,
-            luminosity,
-            rssi,
-            solarCurrent,
-            solarPower,
-            solarVoltage,
-            temperature,
-            receivedAt,
-            nodeId,
-            lists,
-          });
-        }
-      );
+      if ([200].includes(resp.status)) {
+        let data = [];
+        data = resp.data;
+        const {
+          batteryCurrent,
+          batteryPower,
+          batteryVoltage,
+          isOnline,
+          luminosity,
+          rssi,
+          solarCurrent,
+          solarPower,
+          solarVoltage,
+          temperature,
+          receivedAt,
+          nodeId,
+        } = data;
+
+        dispatch({
+          type: 'FETCHED',
+          lamp1: data,
+          batteryCurrent,
+          batteryPower,
+          batteryVoltage,
+          isOnline,
+          luminosity,
+          rssi,
+          solarCurrent,
+          solarPower,
+          solarVoltage,
+          temperature,
+          receivedAt,
+          nodeId,
+          lists,
+        });
+      } else {
+        window.location.replace('/login');
+        dispatch({
+          type: 'ERROR',
+          errorMsg: 'Something went wrong ',
+        });
+        toast.error('Session Expired...');
+      }
+
       return lamp1;
     } catch (e) {
       dispatch({
@@ -159,44 +184,57 @@ function MapProvider({ children }) {
   const getLamp2 = useCallback(async () => {
     dispatch({ type: 'FETCHING' });
     try {
-      await get(`${import.meta.env.VITE_API_ENDPOINT}?nodeId=2`).then(
-        (resp) => {
-          let data = [];
-          data = resp.data;
-          const {
-            batteryCurrent,
-            batteryPower,
-            batteryVoltage,
-            isOnline,
-            luminosity,
-            rssi,
-            solarCurrent,
-            solarPower,
-            solarVoltage,
-            temperature,
-            receivedAt,
-            nodeId,
-          } = data;
-          dispatch({
-            type: 'FETCHED',
-            lamp2: data,
-            batteryCurrent,
-            batteryPower,
-            batteryVoltage,
-            isOnline,
-            luminosity,
-            rssi,
-            solarCurrent,
-            solarPower,
-            solarVoltage,
-            temperature,
-            receivedAt,
-            nodeId,
-            lists,
-          });
-        }
-      );
-      return lamp2;
+      const request = {
+        url: `${import.meta.env.VITE_API_ENDPOINT}/voltaic?nodeId=2`,
+      };
+      const resp = await get(request);
+      console.log('res', resp);
+
+      if ([200].includes(resp.status)) {
+        let data = [];
+        data = resp.data;
+        const {
+          batteryCurrent,
+          batteryPower,
+          batteryVoltage,
+          isOnline,
+          luminosity,
+          rssi,
+          solarCurrent,
+          solarPower,
+          solarVoltage,
+          temperature,
+          receivedAt,
+          nodeId,
+        } = data;
+
+        dispatch({
+          type: 'FETCHED',
+          lamp2: data,
+          batteryCurrent,
+          batteryPower,
+          batteryVoltage,
+          isOnline,
+          luminosity,
+          rssi,
+          solarCurrent,
+          solarPower,
+          solarVoltage,
+          temperature,
+          receivedAt,
+          nodeId,
+          lists,
+        });
+      } else {
+        window.location.replace('/login');
+        dispatch({
+          type: 'ERROR',
+          errorMsg: 'Something went wrong ',
+        });
+        toast.error('Session Expired...');
+      }
+
+      return lamp1;
     } catch (e) {
       dispatch({
         type: 'ERROR',
@@ -204,49 +242,60 @@ function MapProvider({ children }) {
       });
     }
   }, []);
-
   const getLamp3 = useCallback(async () => {
     dispatch({ type: 'FETCHING' });
     try {
-      await get(`${import.meta.env.VITE_API_ENDPOINT}?nodeId=3`).then(
-        (resp) => {
-          let data = [];
-          data = resp.data;
-          const {
-            batteryCurrent,
-            batteryPower,
-            batteryVoltage,
-            isOnline,
-            luminosity,
-            rssi,
-            solarCurrent,
-            solarPower,
-            solarVoltage,
-            temperature,
-            receivedAt,
-            nodeId,
-          } = data;
+      const request = {
+        url: `${import.meta.env.VITE_API_ENDPOINT}/voltaic?nodeId=3`,
+      };
+      const resp = await get(request);
+      console.log('res', resp);
 
-          dispatch({
-            type: 'FETCHED',
-            lamp3: data,
-            batteryCurrent,
-            batteryPower,
-            batteryVoltage,
-            isOnline,
-            luminosity,
-            rssi,
-            solarCurrent,
-            solarPower,
-            solarVoltage,
-            temperature,
-            receivedAt,
-            nodeId,
-            lists,
-          });
-        }
-      );
-      return lamp3;
+      if ([200].includes(resp.status)) {
+        let data = [];
+        data = resp.data;
+        const {
+          batteryCurrent,
+          batteryPower,
+          batteryVoltage,
+          isOnline,
+          luminosity,
+          rssi,
+          solarCurrent,
+          solarPower,
+          solarVoltage,
+          temperature,
+          receivedAt,
+          nodeId,
+        } = data;
+
+        dispatch({
+          type: 'FETCHED',
+          lamp3: data,
+          batteryCurrent,
+          batteryPower,
+          batteryVoltage,
+          isOnline,
+          luminosity,
+          rssi,
+          solarCurrent,
+          solarPower,
+          solarVoltage,
+          temperature,
+          receivedAt,
+          nodeId,
+          lists,
+        });
+      } else {
+        window.location.replace('/login');
+        dispatch({
+          type: 'ERROR',
+          errorMsg: 'Something went wrong ',
+        });
+        toast.error('Session Expired...');
+      }
+
+      return lamp1;
     } catch (e) {
       dispatch({
         type: 'ERROR',
@@ -303,6 +352,7 @@ function MapProvider({ children }) {
         list,
       }}
     >
+      <Toaster />
       {children}
     </MapContext.Provider>
   );

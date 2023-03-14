@@ -5,6 +5,7 @@ import { RiRadioButtonLine } from 'react-icons/ri';
 import streetLamp from '../assets/street-lamp.png';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useMap } from '../context/MapContext';
+import toast, { Toaster } from 'react-hot-toast';
 
 function MapComponent() {
   const { isLoading, lamp1, lamp2, lamp3, getLamp1, getLamp2, getLamp3, list } =
@@ -150,6 +151,7 @@ function MapComponent() {
 
   return (
     <div className="flex p-8">
+      <Toaster />
       {isLoading && (
         <div className="fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-50 overflow-hidden bg-gray-700 opacity-75 flex flex-col items-center justify-center">
           <BeatLoader
