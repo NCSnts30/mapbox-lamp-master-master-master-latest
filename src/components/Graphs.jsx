@@ -33,12 +33,11 @@ const Graphs = () => {
       },
       title: {
         display: true,
-        text: `${nodeId} Chart`,
+        text: `${nodeId} Battery Chart`,
       },
     },
   };
-
-  const optionsBatteryVoltage = {
+  const optionsSolarLamp = {
     maintainAspectRatio: false,
     plugins: {
       legend: {
@@ -46,31 +45,7 @@ const Graphs = () => {
       },
       title: {
         display: true,
-        text: `${nodeId} Battery Voltage Chart`,
-      },
-    },
-  };
-  const optionsBatteryPower = {
-    maintainAspectRatio: false,
-    plugins: {
-      legend: {
-        position: 'top',
-      },
-      title: {
-        display: true,
-        text: `${nodeId} Battery Power Chart`,
-      },
-    },
-  };
-  const optionsBatteryCurrent = {
-    maintainAspectRatio: false,
-    plugins: {
-      legend: {
-        position: 'top',
-      },
-      title: {
-        display: true,
-        text: `${nodeId} Battery Current Chart`,
+        text: `${nodeId} Solar Chart`,
       },
     },
   };
@@ -88,26 +63,17 @@ const Graphs = () => {
     return moment(x.receivedAt).format('MMMM Do YYYY, h:mm:ss a');
   });
 
-  console.log('lists graph', lists);
-  //   function subtractMonths(date, months) {
-  //     date.setMonth(date.getMonth() - months);
-  //     return date;
-  //   }
-  //   const startDate = moment(subtractMonths(new Date(), 5));
-  //   const endDate = moment(new Date());
+  const solarVoltage = lists.map((x) => {
+    return x.solarVoltage;
+  });
 
-  //   const betweenMonths = [];
+  const solarPower = lists.map((x) => {
+    return x.solarPower;
+  });
+  const solarCurrent = lists.map((x) => {
+    return x.solarCurrent;
+  });
 
-  //   if (startDate < endDate) {
-  //     var date = startDate.startOf('month');
-
-  //     while (date < endDate.endOf('month')) {
-  //       betweenMonths.push(date.format('YYYY-MM'));
-  //       date.add(1, 'month');
-  //     }
-  //   }
-
-  //   console.log('betweenMonths', betweenMonths);
   const data = {
     labels: receivedAt,
     datasets: [
@@ -115,46 +81,57 @@ const Graphs = () => {
         label: 'Battery Power',
         data: batteryPower,
         fill: false,
-        borderColor: 'rgb(75, 192, 192)',
-        tension: 0.1,
+        borderColor: '#dc3545',
+        tension: 0.5,
       },
       {
         label: 'Battery Current',
         data: batteryCurrent,
         fill: false,
-        borderColor: 'rgb(102, 204, 0)',
-        tension: 0.1,
+        borderColor: '#ffc107',
+        tension: 0.5,
       },
       {
         label: 'Battery Voltage',
         data: batteryVoltage,
         fill: false,
-        borderColor: 'rgb(178, 102, 255)',
-        tension: 0.1,
+        borderColor: '#0d6efd',
+        tension: 0.5,
       },
     ],
   };
-
-  const dataBattVoltage = {
+  const solarData = {
     labels: receivedAt,
     datasets: [
       {
-        label: 'Battery Voltage',
-        data: batteryVoltage,
+        label: 'Solar Power',
+        data: solarPower,
         fill: false,
-        borderColor: 'rgb(178, 102, 255)',
-        tension: 0.1,
+        borderColor: 'rgb(160,0,0)',
+        tension: 0.5,
+      },
+      {
+        label: 'Solar Current',
+        data: solarCurrent,
+        fill: false,
+        borderColor: 'rgb(160,0,160)',
+        tension: 0.5,
+      },
+      {
+        label: 'Solar Voltage',
+        data: solarVoltage,
+        fill: false,
+        borderColor: 'rgb(0,160,0)',
+        tension: 0.5,
       },
     ],
   };
 
   return (
-    <div className=" h-full">
-      <div className=" h-80">
+    <div className="h-max flex justify-center  items-center  mb-50">
+      <div className=" h-80 w-full flex flex-col">
         <Line options={optionsLamp} data={data} />
-      </div>
-      <div className=" h-80">
-        <Line options={optionsBatteryVoltage} data={dataBattVoltage} />
+        <Line options={optionsSolarLamp} data={solarData} />
       </div>
     </div>
   );

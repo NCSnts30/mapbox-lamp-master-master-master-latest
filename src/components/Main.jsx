@@ -113,7 +113,7 @@ function Main() {
             </div>
           </div>
         </div>
-        <div className="row">
+        <div className="row mb-10">
           <div className="col-xl-6">
             <div className="card mb-4">
               <div className="card-header">
@@ -123,22 +123,25 @@ function Main() {
               <div className="card-body">
                 <div>
                   <Map />
-                  <Graphs2 />
+                  <div className="flex justify-center">
+                    <ExportToExcel />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div className="col-xl-6">
-            <div className="card mb-4 ">
+            <div className="card mb-4 h-full">
               <div className="card-header">
                 <i className="fas fa-chart-bar me-1" />
-                List
+                All Parameters
               </div>
+
               <Graphs />
-              <div className="flex justify-center">
-                <ExportToExcel />
-              </div>
             </div>
+          </div>
+          <div>
+            <Graphs2 />
           </div>
         </div>
       </div>
