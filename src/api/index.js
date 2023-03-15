@@ -15,7 +15,6 @@ const get = async ({ url }) => {
   ret = await axios
     .get(url, {
       headers: {
-        'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
         Authorization: `Bearer ${getCookie('user_token')}`,
       },

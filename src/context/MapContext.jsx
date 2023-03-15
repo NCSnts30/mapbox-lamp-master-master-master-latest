@@ -66,17 +66,17 @@ function MapProvider({ children }) {
     dispatch({ type: 'FETCHING' });
     try {
       let allData = [];
+      console.log('here');
       const request = {
         url: `${
           import.meta.env.VITE_API_ENDPOINT
         }/voltaic/list?limit=${limit}&nodeId=${encodeURIComponent(nodeId)}`,
-        data,
       };
-      resp = await get(request);
-
+      const resp = await get(request);
+      console.log('resp', resp);
       if ([200].includes(resp.status)) {
-        console.log('list', res.data);
-        allData = res.data;
+        console.log('list', resp.data);
+        allData = resp.data;
         dispatch({
           type: 'FETCHED',
           lists: allData,

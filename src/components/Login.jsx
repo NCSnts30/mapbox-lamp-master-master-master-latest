@@ -55,34 +55,41 @@ function Login() {
       </div>
 
       <Toaster />
-      <FlexboxGrid>
-        <FlexboxGrid.Item
-          as={Col}
-          colspan={24}
-          md={11}
-          className="a8-logo"
-        ></FlexboxGrid.Item>
-        <FlexboxGrid.Item as={Col} colspan={24} md={13} className="login-form">
-          <p className="title">Voltaic Login </p>
-
-          <Form onSubmit={handleSubmit(onSubmit)}>
-            <Form.Group controlId={'username'}>
+      <FlexboxGrid className="flex justify-center items-center bg-gray-900">
+        <FlexboxGrid.Item>
+          <Form
+            onSubmit={handleSubmit(onSubmit)}
+            className="max-w-[400px] w-full mx-auto bg-gray-800 p-8 px-8 rounded-lg"
+          >
+            <h2 className="text-6x1 gap-6 text-white font-bold text-center flex flex-col items-center">
+              <div className="bg-cover bg-voltaic-icon h-24 w-44"></div>
+              Sign In
+            </h2>
+            <Form.Group
+              controlId={'username'}
+              className="flex flex-col text-gray-400 py-2"
+            >
               <InputGroup inside>
                 <Form.Control
                   name="username"
                   placeholder="Username"
                   onChange={(v, e) => handleInputChange(v, e)}
+                  className="rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none"
                 />
                 <InputGroup.Addon></InputGroup.Addon>
               </InputGroup>
             </Form.Group>
-            <Form.Group controlId={'password'}>
+            <Form.Group
+              controlId={'password'}
+              className="flex flex-col text-gray-400 py-2"
+            >
               <InputGroup inside>
                 <Form.Control
                   name="password"
                   placeholder="Password"
                   type={visible ? 'text' : 'password'}
                   onChange={(v, e) => handleInputChange(v, e)}
+                  className="rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none"
                 />
               </InputGroup>
             </Form.Group>
@@ -93,7 +100,8 @@ function Login() {
               loading={isLoading}
               disabled={isLoading}
               type="submit"
-              className="custom-btn btn-green"
+              c
+              className="w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal 500/40 text-white font-semibold rounded-lg"
               block
             >
               LOGIN

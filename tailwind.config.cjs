@@ -6,8 +6,10 @@ module.exports = {
       dropShadow: {
         '3xl': '-12px 9px 4px rgba(0, 0, 0, 0.25)',
       },
+      backgroundImage: {
+        'voltaic-icon': "url('./src/assets/voltaic.svg')",
+      },
     },
   },
   plugins: [],
 };
-
