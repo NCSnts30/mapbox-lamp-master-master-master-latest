@@ -20,7 +20,7 @@ function Footer() {
   }, [isLoggedOut, isLoggedIn]);
 
   return (
-    <footer className="bg-gray-800 text-white py-6">
+    <footer className="bg-gray-800 text-white py-6 mt-10">
       <div className="container mx-auto flex flex-wrap items-center">
         <div className="w-full mb-6 text-center">
           <a href="#twitter" className="text-white hover:text-gray-400 mr-4">
