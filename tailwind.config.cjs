@@ -7,7 +7,8 @@ module.exports = {
         '3xl': '-12px 9px 4px rgba(0, 0, 0, 0.25)',
       },
       backgroundImage: {
-        'voltaic-icon': "url('./src/assets/voltaic.svg')",
+        'voltaic-icon':
+          "url('https://imagebuckevoltaic.s3.ap-northeast-1.amazonaws.com/voltaic.png')",
       },
     },
   },

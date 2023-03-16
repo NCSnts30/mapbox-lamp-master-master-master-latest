@@ -34,7 +34,11 @@ function NavBar() {
       <ul className=" flex flex-row  items-center basis-full justify-evenly max-md:justify-between">
         <li>
           <NavLink to="/">
-            <img src={voltaicIcon} alt="" />
+            <img
+              src="https://imagebuckevoltaic.s3.ap-northeast-1.amazonaws.com/voltaic.png"
+              alt=""
+              className="w-16 h-16"
+            />
           </NavLink>
         </li>
 

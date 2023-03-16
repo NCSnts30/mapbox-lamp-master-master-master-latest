@@ -62,7 +62,7 @@ function Login() {
             className="max-w-[400px] w-full mx-auto bg-gray-800 p-20 px-20 rounded-lg"
           >
             <h2 className="text-6x1 gap-6 text-white font-bold text-center flex flex-col items-center">
-              <div className="bg-cover bg-voltaic-icon h-24 w-44"></div>
+              <div className="bg-cover bg-voltaic-icon h-24 w-24"></div>
               Sign In
             </h2>
             <Form.Group
