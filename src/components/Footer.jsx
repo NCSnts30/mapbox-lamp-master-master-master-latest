@@ -34,21 +34,11 @@ function Footer() {
           </a>
         </div>
         <div className="w-full text-center">
-          <a href="/dashboard" className="text-white hover:text-gray-400 mr-4">
-            <NavLink to="/dashboard">Dashboard</NavLink>
-          </a>
-          <a href="/contact" className="text-white hover:text-gray-400 mr-4">
-            <NavLink to="/contact">Contact Us</NavLink>
-          </a>
-          {!isLoggedIn && (
-            <a href="/login" className="text-white hover:text-gray-400 mr-4">
-              <NavLink to="/login">Login</NavLink>
-            </a>
-          )}
+          <NavLink to="/dashboard"> Dashboard </NavLink>
+          <NavLink to="/contact"> Contact Us </NavLink>
+          {!isLoggedIn && <NavLink to="/login"> Login </NavLink>}
 
-          <a href="/pagination" className="text-white hover:text-gray-400 mr-4">
-            <NavLink to="/pagination">Click Here</NavLink>
-          </a>
+          <NavLink to="/pagination"> Click Here </NavLink>
         </div>
       </div>
     </footer>
