@@ -23,6 +23,7 @@ function AboutUs() {
           />
         </span>
       </div>
+
       <div className="flex flex-col">
         <div className="bg-slate-800 w-full text-white p-10">
           <p className="text-4xl md:text-5xl lg:text-6xl">OUR TEAM</p>
@@ -72,10 +73,9 @@ function AboutUs() {
             </div>
           </div>
         </div>
-
         <div className=" bg-slate-400 w-full h-full flex ">
           <img src={wsm} alt="With Sir Mark" className="w-50 h-50" />
-          <img src={grp} alt="With Sir Mark" className="w-50 h-50" />
+          <img src={grp} alt="With Sir Mark" className="w-50 h-auto" />
         </div>
       </div>
     </Element>

@@ -7,6 +7,12 @@ import lamp4 from '../assets/D.jpg';
 import lamp5 from '../assets/E.jpg';
 import AboutUs from './AboutUs';
 import './css/home.css';
+import {
+  Parallax,
+  ParallaxBanner,
+  ParallaxProvider,
+  useParallax,
+} from 'react-scroll-parallax';
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -51,6 +57,59 @@ function Home() {
         </Carousel>
       </div>
       <AboutUs />
+      <ParallaxProvider>
+        <ParallaxBanner
+          layers={[{ image: '/static/PIC1.jpg', speed: -30 }]}
+          className="aspect-[4/1] opacity-90"
+        >
+          <div className="flex flex-col items-center p-6 md:p-12 lg:p-20 xl:p-32 h-full relative">
+            <div>
+              <h1 className="text-white uppercase drop-shadow-3xl sm:text-3xl md:text-6xl text-center">
+                About our Study
+              </h1>
+            </div>
+
+            <div className="text-white text-justify drop-shadow-3xl text-2xl">
+              <h2>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Repudiandae quisquam laboriosam numquam culpa voluptates atque,
+                illo ab nemo? A nesciunt temporibus voluptate molestias, neque
+                veniam odio et labore dolores enim!
+              </h2>
+            </div>
+          </div>
+        </ParallaxBanner>
+      </ParallaxProvider>
+      <div className="bg-slate-400 flex">
+        <img src={lamp1} alt="lamps" className="w-1/2 h-auto" />
+        <img src={lamp2} alt="lamps" className="w-1/2 h-auto" />
+        <img src={lamp3} alt="lamps" className="w-1/2 h-auto" />
+        <img src={lamp4} alt="lamps" className="w-1/2 h-auto" />
+      </div>
+
+      <ParallaxProvider>
+        <ParallaxBanner
+          layers={[{ image: '/static/banner.jpg', speed: -30 }]}
+          className="aspect-[4/1] opacity-80"
+        >
+          <div className="flex flex-col items-center p-6 md:p-12 lg:p-20 xl:p-32 h-full relative">
+            <div>
+              <h1 className="text-white uppercase drop-shadow-3xl sm:text-3xl md:text-6xl text-center">
+                Developments
+              </h1>
+            </div>
+
+            <div className="text-white text-justify drop-shadow-3xl text-2xl">
+              <h2>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Repudiandae quisquam laboriosam numquam culpa voluptates atque,
+                illo ab nemo? A nesciunt temporibus voluptate molestias, neque
+                veniam odio et labore dolores enim!
+              </h2>
+            </div>
+          </div>
+        </ParallaxBanner>
+      </ParallaxProvider>
     </div>
   );
 }
