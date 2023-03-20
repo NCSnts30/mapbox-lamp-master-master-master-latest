@@ -7,6 +7,7 @@ import jha from '../assets/Jhasset.png';
 import niel from '../assets/NeilC.jpg';
 import elai from '../assets/Elaizaa.jpg';
 import wsm from '../assets/WSM.jpg';
+import grp from '../assets/GRP.jpg';
 
 function AboutUs() {
   return (
@@ -74,7 +75,7 @@ function AboutUs() {
 
         <div className=" bg-slate-400 w-full h-full flex ">
           <img src={wsm} alt="With Sir Mark" className="w-50 h-50" />
-          <img src={wsm} alt="With Sir Mark" className="w-50 h-50" />
+          <img src={grp} alt="With Sir Mark" className="w-50 h-50" />
         </div>
       </div>
     </Element>
