@@ -5,6 +5,9 @@ import lamp2 from '../assets/B.jpg';
 import lamp3 from '../assets/C.jpg';
 import lamp4 from '../assets/D.jpg';
 import lamp5 from '../assets/E.jpg';
+import PIC4 from '../assets/PIC4.jpg';
+import PIC5 from '../assets/PIC5.jpg';
+import PIC6 from '../assets/PIC6.jpg';
 import AboutUs from './AboutUs';
 import './css/home.css';
 import {
@@ -60,7 +63,7 @@ function Home() {
       <ParallaxProvider>
         <ParallaxBanner
           layers={[{ image: '/static/PIC1.jpg', speed: -30 }]}
-          className="aspect-[4/1] opacity-90"
+          className="aspect-[3/1] opacity-65"
         >
           <div className="flex flex-col items-center p-6 md:p-12 lg:p-20 xl:p-32 h-full relative">
             <div>
@@ -71,26 +74,57 @@ function Home() {
 
             <div className="text-white text-justify drop-shadow-3xl text-2xl">
               <h2>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Repudiandae quisquam laboriosam numquam culpa voluptates atque,
-                illo ab nemo? A nesciunt temporibus voluptate molestias, neque
-                veniam odio et labore dolores enim!
+                This thesis presents the development of a centralized monitoring
+                system for solar streetlights using the LoRa wireless
+                communication protocol and a microcontroller. The system aims to
+                address the inefficiencies of traditional solar streetlight
+                systems, which often lack real-time monitoring and control
+                capabilities. The proposed system consists of multiple solar
+                streetlights equipped with sensors and a gateway that collects
+                and sends data to a central server. The LoRa wireless
+                communication protocol was chosen due to its long-range
+                capabilities and low power consumption, making it ideal for IoT
+                applications such as this. The microcontroller is responsible
+                for controlling the sensors and relaying data to the gateway.
+                The central server receives data from the gateway and provides a
+                real-time monitoring and control interface, enabling the user to
+                monitor the performance of individual streetlights and adjust
+                their settings as needed. The proposed system offers numerous
+                advantages over traditional solar streetlight systems, including
+                improved energy efficiency, reduced maintenance costs, and
+                enhanced reliability. The system also provides a platform for
+                future enhancements, such as the integration of additional
+                sensors and analytics tools to optimize energy usage. In
+                conclusion, the proposed IoT centralized monitoring system for
+                solar streetlights using LoRa and a microcontroller offers a
+                more efficient and cost-effective solution for managing solar
+                streetlights. This system has the potential to significantly
+                improve the sustainability and efficiency of streetlight systems
+                while reducing their environmental impact.
               </h2>
             </div>
           </div>
         </ParallaxBanner>
       </ParallaxProvider>
-      <div className="bg-slate-400 flex">
-        <img src={lamp1} alt="lamps" className="w-1/2 h-auto" />
-        <img src={lamp2} alt="lamps" className="w-1/2 h-auto" />
-        <img src={lamp3} alt="lamps" className="w-1/2 h-auto" />
-        <img src={lamp4} alt="lamps" className="w-1/2 h-auto" />
+
+      <div className="midsec">
+        <div className="bg-slate-400  w-full h-full flex ">
+          <div className="div6 grayscale">
+            <img src={PIC4} alt="lamp1" className=" md:container md:mx-auto" />
+          </div>
+          <div className="div7 grayscale">
+            <img src={PIC5} alt="lamp1" className=" md:container md:mx-auto" />
+          </div>
+          <div className="div8 grayscale">
+            <img src={PIC6} alt="lamp1" className=" md:container md:mx-auto" />
+          </div>
+        </div>
       </div>
 
       <ParallaxProvider>
         <ParallaxBanner
-          layers={[{ image: '/static/banner.jpg', speed: -30 }]}
-          className="aspect-[4/1] opacity-80"
+          layers={[{ image: '/static/PIC7.jpg', speed: -30 }]}
+          className="aspect-[3/1] opacity-80"
         >
           <div className="flex flex-col items-center p-6 md:p-12 lg:p-20 xl:p-32 h-full relative">
             <div>
@@ -101,10 +135,25 @@ function Home() {
 
             <div className="text-white text-justify drop-shadow-3xl text-2xl">
               <h2>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Repudiandae quisquam laboriosam numquam culpa voluptates atque,
-                illo ab nemo? A nesciunt temporibus voluptate molestias, neque
-                veniam odio et labore dolores enim!
+                The Internet of Things (IoT) is the interconnectivity of
+                physical devices with the internet and other devices. It creates
+                a system of devices that can communicate and perform tasks with
+                minimal human intervention. IoT devices range from simple
+                sensors to complex machinery and are connected to the internet,
+                enabling them to be remotely monitored and controlled. IoT is
+                being used in various industries, including healthcare,
+                manufacturing, transportation, and agriculture. In healthcare,
+                it is used to remotely monitor patients, while in manufacturing,
+                it optimizes production processes and reduces waste. IoT can
+                increase efficiency, reduce costs, and improve safety by
+                collecting and analyzing data, enabling companies to make
+                informed decisions. However, IoT also presents significant
+                challenges, including security and privacy concerns. As more
+                devices are connected to the internet, the risk of cyberattacks
+                increases, and ensuring the security of devices and data is
+                crucial. Overall, IoT has the potential to transform the way we
+                live and work, but addressing security and privacy concerns is
+                essential for its successful implementation.
               </h2>
             </div>
           </div>

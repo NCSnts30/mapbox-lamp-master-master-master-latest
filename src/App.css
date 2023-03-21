@@ -121,9 +121,24 @@ nav li {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     }
-    
-.div1 { grid-area: 1 / 1 / 4 / 4; }
-.div2 { grid-area: 1 / 5 / 4 / 8; }
-.div3 { grid-area: 1 / 9 / 4 / 12; }
-    .div4 { grid-area: 4 / 3 / 7 / 6; }
-    .div5 { grid-area: 4 / 7 / 7 / 10; }
+      
+  .div1 { grid-area: 1 / 1 / 4 / 4; }
+  .div2 { grid-area: 1 / 5 / 4 / 8; }
+  .div3 { grid-area: 1 / 9 / 4 / 12; }
+  .div4 { grid-area: 4 / 3 / 7 / 6; }
+  .div5 { grid-area: 4 / 7 / 7 / 10; }
+
+.midsec {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.div6, .div7, .div8 {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .div6, .div7, .div8 {
+    width: 100%;
+  }
+}
