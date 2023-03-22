@@ -191,9 +191,25 @@ nav li {
     font-size: 0.65rem;
   }
 }
+
+
 @media (max-width: 438px) {
   .abstract {
     font-size: xx-small;
+  }
+}
+
+/* div 10 */
+
+@media (max-width: 620px) {
+  .div10 {
+    height: 250px; /* adjust height as needed */
+  }
+}
+
+@media (max-width: 498px) {
+  .div10 {
+    height: 300px; /* adjust height as needed */
   }
 }
 
