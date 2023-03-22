@@ -62,7 +62,7 @@ function Home() {
       <AboutUs />
       <ParallaxProvider>
         <ParallaxBanner
-          layers={[{ image: '/static/PIC1.jpg', speed: -30 }]}
+          layers={[{ image: '/static/PIC1.jpg', speed: -50 }]}
           className="aspect-[3/1] opacity-65 div10"
         >
           <div className="flex flex-col items-center p-6 md:p-12 lg:p-20 xl:p-32 h-full relative">
@@ -174,17 +174,17 @@ function Home() {
 
       <ParallaxProvider>
         <ParallaxBanner
-          layers={[{ image: '/static/PIC7.jpg', speed: -30 }]}
-          className="aspect-[3/1] opacity-80 div10"
+          layers={[{ image: '/static/PIC2.jpg', speed: -50 }]}
+          className="aspect-[3/1] div10"
         >
           <div className="flex flex-col items-center p-6 md:p-12 lg:p-20 xl:p-32 h-full relative">
             <div>
-              <h1 className="text-white uppercase drop-shadow-3xl sm:text-3xl md:text-6xl text-center">
+              <h1 className="text-white uppercase drop-shadow-7xl sm:text-3xl md:text-7xl text-center">
                 Developments
               </h1>
             </div>
 
-            <div className="text-white text-justify drop-shadow-3xl text-2xl">
+            <div className="text-white text-justify drop-shadow-2xl text-2xl">
               <h2 className="abstract">
                 The Internet of Things (IoT) is the interconnectivity of
                 physical devices with the internet and other devices. It creates
