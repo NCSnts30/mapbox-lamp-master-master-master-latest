@@ -63,7 +63,7 @@ function Home() {
       <ParallaxProvider>
         <ParallaxBanner
           layers={[{ image: '/static/PIC1.jpg', speed: -30 }]}
-          className="aspect-[3/1] opacity-65"
+          className="aspect-[3/1] opacity-65 div10"
         >
           <div className="flex flex-col items-center p-6 md:p-12 lg:p-20 xl:p-32 h-full relative">
             <div>
@@ -73,7 +73,7 @@ function Home() {
             </div>
 
             <div className="text-white text-justify drop-shadow-3xl text-2xl">
-              <h2>
+              <h2 className="abstract">
                 This thesis presents the development of a centralized monitoring
                 system for solar streetlights using the LoRa wireless
                 communication protocol and a microcontroller. The system aims to
@@ -108,15 +108,66 @@ function Home() {
       </ParallaxProvider>
 
       <div className="midsec">
-        <div className="bg-slate-400  w-full h-full flex ">
-          <div className="div6 grayscale">
-            <img src={PIC4} alt="lamp1" className=" md:container md:mx-auto" />
+        <div className="bg-slate-400 w-full h-full flex">
+          <div className="div6 grayscale relative w-full sm:w-1/3">
+            <img
+              src={PIC4}
+              alt="lamp1"
+              className="md:container md:mx-auto brightness-50 w-full"
+            />
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+              <div className="below-1056">
+                <h1 className="text-white uppercase drop-shadow-3xl sm:text-2xl md:text-4xl lg:text-2x1 text-xl">
+                  IoT Based
+                </h1>
+              </div>
+              <h5 className="text-white text-justify drop-shadow-3xl text-1xl md:text-1xl hide-below-1590">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Molestiae iure cum quas. Cum obcaecati quos a quod officiis
+                explicabo reprehenderit quis impedit ut temporibus? Iure
+                reprehenderit eligendi blanditiis vitae? Sapiente.
+              </h5>
+            </div>
           </div>
-          <div className="div7 grayscale">
-            <img src={PIC5} alt="lamp1" className=" md:container md:mx-auto" />
+          <div className="div7 grayscale relative w-full sm:w-1/3">
+            <img
+              src={PIC5}
+              alt="lamp1"
+              className="md:container md:mx-auto brightness-50 w-full"
+            />
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+              <div className="below-1056">
+                <h1 className="text-white uppercase drop-shadow-3xl sm:text-2xl md:text-4xl lg:text-2x1 text-xl">
+                  Real-time Monitoring
+                </h1>
+              </div>
+              <h5 className="text-white text-justify drop-shadow-3xl text-1xl md:text-1xl hide-below-1590">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Molestiae iure cum quas. Cum obcaecati quos a quod officiis
+                explicabo reprehenderit quis impedit ut temporibus? Iure
+                reprehenderit eligendi blanditiis vitae? Sapiente.
+              </h5>
+            </div>
           </div>
-          <div className="div8 grayscale">
-            <img src={PIC6} alt="lamp1" className=" md:container md:mx-auto" />
+          <div className="div8 grayscale relative w-full sm:w-1/3">
+            <img
+              src={PIC6}
+              alt="lamp1"
+              className="md:container md:mx-auto brightness-50 w-full"
+            />
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+              <div className="below-1056">
+                <h1 className="text-white uppercase drop-shadow-3xl sm:text-2xl md:text-4xl lg:text-2x1 text-xl">
+                  #EnviFriendly
+                </h1>
+              </div>
+              <h5 className="text-white text-justify drop-shadow-3xl text-1xl md:text-1xl hide-below-1590">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Molestiae iure cum quas. Cum obcaecati quos a quod officiis
+                explicabo reprehenderit quis impedit ut temporibus? Iure
+                reprehenderit eligendi blanditiis vitae? Sapiente.
+              </h5>
+            </div>
           </div>
         </div>
       </div>
@@ -124,7 +175,7 @@ function Home() {
       <ParallaxProvider>
         <ParallaxBanner
           layers={[{ image: '/static/PIC7.jpg', speed: -30 }]}
-          className="aspect-[3/1] opacity-80"
+          className="aspect-[3/1] opacity-80 div10"
         >
           <div className="flex flex-col items-center p-6 md:p-12 lg:p-20 xl:p-32 h-full relative">
             <div>
@@ -134,7 +185,7 @@ function Home() {
             </div>
 
             <div className="text-white text-justify drop-shadow-3xl text-2xl">
-              <h2>
+              <h2 className="abstract">
                 The Internet of Things (IoT) is the interconnectivity of
                 physical devices with the internet and other devices. It creates
                 a system of devices that can communicate and perform tasks with

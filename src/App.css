@@ -142,3 +142,99 @@ nav li {
     width: 100%;
   }
 }
+@media screen and (max-width: 1590px) {
+  .hide-below-1590 {
+    display: none;
+  }
+}
+
+.below-1056 {
+  font-size: 2.5em;
+}
+@media screen and (max-width: 1630px) {
+  .abstract {
+    font-size: 1.25rem;
+  }
+}
+@media screen and (max-width: 1466px) {
+  .abstract {
+    font-size: 1.20rem;
+  }
+}
+@media screen and (max-width: 1353px) {
+  .abstract {
+    font-size: 1.15rem;
+  }
+}
+@media screen and (max-width: 1203px) {
+  .abstract {
+    font-size: 1.10rem;
+  }
+}
+@media screen and (max-width: 1157px) {
+  .abstract {
+    font-size: 1.05rem;
+  }
+}
+@media screen and (max-width: 1112px) {
+  .abstract {
+    font-size: 1.00rem;
+  }
+}
+@media screen and (max-width: 1067px) {
+  .abstract {
+    font-size: 0.75rem;
+  }
+}
+@media screen and (max-width: 837px) {
+  .abstract {
+    font-size: 0.65rem;
+  }
+}
+@media (max-width: 438px) {
+  .abstract {
+    font-size: xx-small;
+  }
+}
+
+@media (max-width: 430px) {
+  .div10 {
+    height: 300px; /* adjust height as needed */
+  }
+}
+@media (max-width: 365px) {
+  .div10 {
+    height: 350px; /* adjust height as needed */
+  }
+}
+@media (max-width: 309px) {
+  .div10 {
+    height: 400px; /* adjust height as needed */
+  }
+}
+@media (max-width: 306px) {
+  .div10 {
+    height: 450px; /* adjust height as needed */
+  }
+}
+@media (max-width: 243px) {
+  .div10 {
+    height: 450px; /* adjust height as needed */
+  }
+}
+@media (max-width: 240px) {
+  .div10 {
+    height: 600px; /* adjust height as needed */
+  }
+}
+@media (max-width: 156px) {
+  .div10 {
+    height: 1000px; /* adjust height as needed */
+  }
+}
+@media (max-width: 130px) {
+  .div10 {
+    height: 1250px; /* adjust height as needed */
+  }
+}
+
