@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import BackToTopButton from './BackToTopButton';
 
 function Footer() {
   const [isLoggedIn, setIsLoggedIn] = useState();
@@ -19,6 +20,10 @@ function Footer() {
     }
   }, [isLoggedOut, isLoggedIn]);
 
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="bg-gray-800 text-white py-6 mt-10">
       <div className="container mx-auto flex flex-wrap items-center">
@@ -33,6 +38,7 @@ function Footer() {
             <i className="fab fa-instagram" />
           </a>
         </div>
+
         <div className="w-full text-center">
           <NavLink to="/dashboard"> Dashboard </NavLink>
           <NavLink to="/contact"> Contact Us </NavLink>
@@ -41,6 +47,7 @@ function Footer() {
           <NavLink to="/pagination"> Click Here </NavLink>
         </div>
       </div>
+      <BackToTopButton />
     </footer>
   );
 }
