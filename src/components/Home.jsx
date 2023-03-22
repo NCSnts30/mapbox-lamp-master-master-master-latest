@@ -210,6 +210,7 @@ function Home() {
           </div>
         </ParallaxBanner>
       </ParallaxProvider>
+      <br />
     </div>
   );
 }
