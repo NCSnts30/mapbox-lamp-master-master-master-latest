@@ -8,6 +8,8 @@ import lamp5 from '../assets/E.jpg';
 import PIC4 from '../assets/PIC4.jpg';
 import PIC5 from '../assets/PIC5.jpg';
 import PIC6 from '../assets/PIC6.jpg';
+import PIC1 from '../assets/PIC1.jpg';
+import PIC2 from '../assets/PIC2.jpg';
 import AboutUs from './AboutUs';
 import './css/home.css';
 import {
@@ -22,6 +24,21 @@ const breakPoints = [
   { width: 550, itemsToShow: 2 },
   { width: 800, itemsToShow: 3, itemsToScroll: 3 },
 ];
+
+const layerOne = {
+  image: PIC1,
+  translateY: [0, 60],
+  scale: [1.05, 1, 'easeOutCubic'],
+  shouldAlwaysCompleteAnimation: true,
+};
+
+const layerTwo = {
+  image: PIC2,
+  translateY: [0, 30],
+  scale: [2, 2, 'easeOutCubic'],
+  expanded: true,
+  shouldAlwaysCompleteAnimation: true,
+};
 
 function Home() {
   const items = [
@@ -61,10 +78,7 @@ function Home() {
       </div>
       <AboutUs />
       <ParallaxProvider>
-        <ParallaxBanner
-          layers={[{ image: '/static/PIC1.jpg', speed: -50 }]}
-          className="aspect-[3/1] opacity-65 div10"
-        >
+        <ParallaxBanner layers={[layerOne]} className="aspect-[3/1] div10">
           <div className="flex flex-col items-center p-6 md:p-12 lg:p-20 xl:p-32 h-full relative">
             <div>
               <h1 className="text-white uppercase drop-shadow-3xl sm:text-3xl md:text-6xl text-center">
@@ -74,33 +88,31 @@ function Home() {
 
             <div className="text-white text-justify drop-shadow-3xl text-2xl">
               <h2 className="abstract">
-                This thesis presents the development of a centralized monitoring
-                system for solar streetlights using the LoRa wireless
-                communication protocol and a microcontroller. The system aims to
-                address the inefficiencies of traditional solar streetlight
-                systems, which often lack real-time monitoring and control
-                capabilities. The proposed system consists of multiple solar
-                streetlights equipped with sensors and a gateway that collects
-                and sends data to a central server. The LoRa wireless
-                communication protocol was chosen due to its long-range
-                capabilities and low power consumption, making it ideal for IoT
-                applications such as this. The microcontroller is responsible
-                for controlling the sensors and relaying data to the gateway.
-                The central server receives data from the gateway and provides a
-                real-time monitoring and control interface, enabling the user to
-                monitor the performance of individual streetlights and adjust
-                their settings as needed. The proposed system offers numerous
-                advantages over traditional solar streetlight systems, including
-                improved energy efficiency, reduced maintenance costs, and
-                enhanced reliability. The system also provides a platform for
-                future enhancements, such as the integration of additional
-                sensors and analytics tools to optimize energy usage. In
-                conclusion, the proposed IoT centralized monitoring system for
-                solar streetlights using LoRa and a microcontroller offers a
-                more efficient and cost-effective solution for managing solar
-                streetlights. This system has the potential to significantly
-                improve the sustainability and efficiency of streetlight systems
-                while reducing their environmental impact.
+                IoT centralized monitoring system with solar streetlight
+                application employing LoRa as a long-range wireless
+                communication between the solar streetlight and the central
+                system and a microcontroller as the main monitoring system. The
+                technology intends to develop the community in the Philippines
+                that has been utilizing conventional streetlights that
+                frequently lack a monitoring mechanism. Traditional streetlights
+                are still used in the Philippines, particularly in rural areas.
+                The primary issue with solar streetlights currently is that they
+                have a short lifespan due to a lack of a system for monitoring.
+                The system covers the monitoring of LED, solar panel, and
+                battery using the current, voltage, temperature, and luminosity
+                sensors of a standalone solar streetlight. LoRa wireless
+                communication is used because of its long-range capabilities (up
+                to 12 km) and low power consumption, and the Arduino Nano is
+                used to gather and transmit data to the NodeMCU, which serves as
+                the system's receiver or central server that provides data to a
+                web-based interface to offer real-time monitoring of solar
+                streetlight parameters such as current, voltage, temperature,
+                battery SOH and SOC, and luminance. The results indicate that
+                the proposed system can track and manage solar streetlights
+                while providing efficient maintenance scheduling. Overall, this
+                system offers a practical solution for managing and optimizing
+                solar streetlight applications, contributing to the development
+                of a sustainable and energy-efficient environment.
               </h2>
             </div>
           </div>
@@ -173,10 +185,7 @@ function Home() {
       </div>
 
       <ParallaxProvider>
-        <ParallaxBanner
-          layers={[{ image: '/static/PIC2.jpg', speed: -50 }]}
-          className="aspect-[3/1] div10"
-        >
+        <ParallaxBanner layers={[layerTwo]} className="aspect-[3/1] div10">
           <div className="flex flex-col items-center p-6 md:p-12 lg:p-20 xl:p-32 h-full relative">
             <div>
               <h1 className="text-white uppercase drop-shadow-7xl sm:text-3xl md:text-7xl text-center">
