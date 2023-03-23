@@ -25,6 +25,21 @@ const breakPoints = [
   { width: 800, itemsToShow: 3, itemsToScroll: 3 },
 ];
 
+const layerOne = {
+  image: PIC1,
+  translateY: [0, 60],
+  scale: [1.05, 1, 'easeOutCubic'],
+  shouldAlwaysCompleteAnimation: true,
+};
+
+const layerTwo = {
+  image: PIC2,
+  translateY: [0, 30],
+  scale: [2, 2, 'easeOutCubic'],
+  expanded: true,
+  shouldAlwaysCompleteAnimation: true,
+};
+
 function Home() {
   const items = [
     { id: 1, src: lamp1 },
@@ -63,10 +78,7 @@ function Home() {
       </div>
       <AboutUs />
       <ParallaxProvider>
-        <ParallaxBanner
-          layers={[{ image: 'src/assets/PIC1.jpg', speed: -50 }]}
-          className="aspect-[3/1] opacity-65 div10"
-        >
+        <ParallaxBanner layers={[layerOne]} className="aspect-[3/1] div10">
           <div className="flex flex-col items-center p-6 md:p-12 lg:p-20 xl:p-32 h-full relative">
             <div>
               <h1 className="text-white uppercase drop-shadow-3xl sm:text-3xl md:text-6xl text-center">
@@ -173,10 +185,7 @@ function Home() {
       </div>
 
       <ParallaxProvider>
-        <ParallaxBanner
-          layers={[{ image: 'src/assets/PIC2.jpg', speed: -50 }]}
-          className="aspect-[3/1] div10"
-        >
+        <ParallaxBanner layers={[layerTwo]} className="aspect-[3/1] div10">
           <div className="flex flex-col items-center p-6 md:p-12 lg:p-20 xl:p-32 h-full relative">
             <div>
               <h1 className="text-white uppercase drop-shadow-7xl sm:text-3xl md:text-7xl text-center">
