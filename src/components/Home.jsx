@@ -27,8 +27,8 @@ const breakPoints = [
 
 const layerOne = {
   image: PIC1,
-  translateY: [0, 60],
-  scale: [1.05, 1, 'easeOutCubic'],
+  translateY: [0, 50],
+  scale: [2, 2, 'easeOutCubic'],
   shouldAlwaysCompleteAnimation: true,
 };
 
@@ -185,7 +185,7 @@ function Home() {
       </div>
 
       <ParallaxProvider>
-        <ParallaxBanner layers={[layerTwo]} className="aspect-[3/1] div10">
+        <ParallaxBanner layers={[layerTwo]} className="aspect-[3/1] div11">
           <div className="flex flex-col items-center p-6 md:p-12 lg:p-20 xl:p-32 h-full relative">
             <div>
               <h1 className="text-white uppercase drop-shadow-7xl sm:text-3xl md:text-7xl text-center">

@@ -148,10 +148,21 @@ nav li {
   }
 }
 
-/* div 10 */
+/*parallax*/
+@media (max-width: 1920px) {
+  .div10 {
+    height: 600px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 600px; /* adjust height as needed */
+  }
+}
 @media (max-width: 1603px) {
   .div10 {
     height: 700px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 600px; /* adjust height as needed */
   }
 }
 @media (max-width: 930px) {
@@ -163,112 +174,179 @@ nav li {
   .div10 {
     height: 800px; /* adjust height as needed */
   }
+  .div11 {
+    height: 680px; /* adjust height as needed */
+  }
 }
 
 @media (max-width: 770px) {
   .div10 {
     height: 850px; /* adjust height as needed */
   }
+  .div11 {
+    height: 650px; /* adjust height as needed */
+  }
 }
 
 @media (max-width: 640px) {
   .div10 {
-    height: 950px; /* adjust height as needed */
+    height: 850px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 700px; /* adjust height as needed */
   }
 }
 
 @media (max-width: 570px) {
   .div10 {
-    height: 1000px; /* adjust height as needed */
+    height: 950px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 750px; /* adjust height as needed */
   }
 }
 
 @media (max-width: 544px) {
   .div10 {
-    height: 1050px; /* adjust height as needed */
+    height: 975px; /* adjust height as needed */
   }
 }
 
 @media (max-width: 526px) {
   .div10 {
-    height: 1100px; /* adjust height as needed */
+    height: 1000px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 800px; /* adjust height as needed */
   }
 }
 
 @media (max-width: 500px) {
   .div10 {
-    height: 1150px; /* adjust height as needed */
+    height: 1050px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 850px; /* adjust height as needed */
   }
 }
 
 @media (max-width: 484px) {
   .div10 {
-    height: 1250px; /* adjust height as needed */
+    height: 1100px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 875px; /* adjust height as needed */
   }
 }
 
 @media (max-width: 440px) {
   .div10 {
-    height: 1350px; /* adjust height as needed */
+    height: 1250px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 950px; /* adjust height as needed */
   }
 }
 
 @media (max-width: 422px) {
   .div10 {
-    height: 1450px; /* adjust height as needed */
+    height: 1300px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 1000px; /* adjust height as needed */
   }
 }
 
 @media (max-width: 403px) {
   .div10 {
-    height: 1550px; /* adjust height as needed */
+    height: 1400px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 1070px; /* adjust height as needed */
+  }
+}
+
+@media (max-width: 384px) {
+  .div10 {
+    height: 1500px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 1100px; /* adjust height as needed */
   }
 }
 
 @media (max-width: 380px) {
   .div10 {
-    height: 1650px; /* adjust height as needed */
+    height: 1500px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 1100px; /* adjust height as needed */
   }
 }
 
 @media (max-width: 360px) {
   .div10 {
-    height: 1750px; /* adjust height as needed */
+    height: 1575px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 1200px; /* adjust height as needed */
   }
 }
-
+@media (max-width: 350px) {
+  .div10 {
+    height: 1650px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 1250px; /* adjust height as needed */
+  }
+}
 @media (max-width: 337px) {
   .div10 {
-    height: 1850px; /* adjust height as needed */
+    height: 1700px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 1300px; /* adjust height as needed */
   }
 }
 
 @media (max-width: 320px) {
   .div10 {
-    height: 2000px; /* adjust height as needed */
+    height: 1900px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 1400px; /* adjust height as needed */
   }
 }
 
 @media (max-width: 313px) {
   .div10 {
-    height: 2200px; /* adjust height as needed */
+    height: 1950px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 1450px; /* adjust height as needed */
   }
 }
 
-@media (max-width: 288px) {
+@media (max-width: 300px) {
   .div10 {
-    height: 2400px; /* adjust height as needed */
+    height: 2100px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 1700px; /* adjust height as needed */
   }
 }
 
 @media (max-width: 270px) {
   .div10 {
-    height: 2600px; /* adjust height as needed */
+    height: 2400px; /* adjust height as needed */
   }
 }
 @media (max-width: 248px) {
   .div10 {
-    height: 2800px; /* adjust height as needed */
+    height: 2600px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 2000px; /* adjust height as needed */
   }
 }
 
