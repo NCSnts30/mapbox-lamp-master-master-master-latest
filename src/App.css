@@ -148,7 +148,7 @@ nav li {
   }
 }
 
-/*parallax*/
+/*parallax responsive*/ 
 @media (max-width: 1920px) {
   .div10 {
     height: 600px; /* adjust height as needed */
