@@ -100,17 +100,31 @@ function MapProvider({ children }) {
 
   const exportSummary = useCallback(async () => {
     dispatch({ type: 'FETCHING' });
+
     try {
-      await get(
-        `${import.meta.env.VITE_API_ENDPOINT}/voltaic/export?limit=9999`
-      ).then((res) => {
-        const { url } = res.data;
+      console.log('set');
+
+      const request = {
+        url: `${import.meta.env.VITE_API_ENDPOINT}/voltaic/export?limit=9999`,
+      };
+      const resp = await get(request);
+      console.log('res', resp);
+
+      if ([200].includes(resp.status)) {
+        const { url } = resp.data;
         console.log(url);
         window.open(url, '_blank');
-      });
-      dispatch({
-        type: 'FETCHED',
-      });
+        dispatch({
+          type: 'FETCHED',
+        });
+      } else {
+        window.location.replace('/login');
+        dispatch({
+          type: 'ERROR',
+          errorMsg: 'Something went wrong ',
+        });
+        toast.error('Session Expired...');
+      }
     } catch (e) {
       dispatch({
         type: 'ERROR',
