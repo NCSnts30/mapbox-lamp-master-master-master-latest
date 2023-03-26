@@ -10,4 +10,7 @@
     h1 {
       font-family: 'JetBrains Mono', monospace;
     }
+    .text-swal{
+      color:red;
+    }
   }
