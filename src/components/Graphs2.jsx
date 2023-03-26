@@ -141,6 +141,18 @@ const Graphs2 = () => {
       },
     },
   };
+  const optionsSOC = {
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: `${nodeId} State of Charge Chart`,
+      },
+    },
+  };
   const optionsSolarVoltage = {
     maintainAspectRatio: false,
     plugins: {
@@ -156,6 +168,9 @@ const Graphs2 = () => {
 
   const solarVoltage = lists.map((x) => {
     return x.solarVoltage;
+  });
+  const soc = lists.map((x) => {
+    return x.soc;
   });
 
   const solarPower = lists.map((x) => {
@@ -201,6 +216,18 @@ const Graphs2 = () => {
       },
     ],
   };
+  const dataSOC = {
+    labels: receivedAt,
+    datasets: [
+      {
+        label: 'State of Charge',
+        data: soc,
+        fill: false,
+        borderColor: '#0d6efd',
+        tension: 0.1,
+      },
+    ],
+  };
   return (
     <div>
       <div className=" h-full flex gap-8">
@@ -224,6 +251,9 @@ const Graphs2 = () => {
         <div className="h-80 w-full">
           <Line options={optionsSolarVoltage} data={dataSolarVoltage} />
         </div>
+      </div>
+      <div className="h-80 w-full">
+        <Line options={optionsSOC} data={dataSOC} />
       </div>
     </div>
   );

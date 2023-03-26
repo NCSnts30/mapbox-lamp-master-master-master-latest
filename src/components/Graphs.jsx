@@ -128,9 +128,11 @@ const Graphs = () => {
   };
 
   return (
-    <div className="h-max flex justify-center  items-center  mb-50">
-      <div className=" h-80 w-full flex flex-col">
+    <div className="h-max flex flex-col justify-center  items-center  mb-50">
+      <div className=" h-80 w-full ">
         <Line options={optionsLamp} data={data} />
+      </div>
+      <div className=" h-80 w-full">
         <Line options={optionsSolarLamp} data={solarData} />
       </div>
     </div>
