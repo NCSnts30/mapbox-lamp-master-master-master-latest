@@ -19,6 +19,8 @@ const initialState = {
   lamp2: {},
   lamp3: {},
   nodeId: '',
+  startDate: new Date(),
+  endDate: new Date(),
   batteryCurrent: 0,
   batteryPower: 0,
   batteryVoltage: 0,
@@ -60,7 +62,7 @@ function reducer(state, action) {
 function MapProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const { isLoading, lamp1, lamp2, lamp3, lists } = state;
+  const { isLoading, lamp1, lamp2, lamp3, lists, startDate, endDate } = state;
 
   const list = useCallback(async (nodeId, limit = 9999) => {
     dispatch({ type: 'FETCHING' });
@@ -98,14 +100,18 @@ function MapProvider({ children }) {
     }
   }, []);
 
-  const exportSummary = useCallback(async () => {
+  const exportSummary = useCallback(async (startDateTime, endDateTime) => {
     dispatch({ type: 'FETCHING' });
 
     try {
       console.log('set');
 
       const request = {
-        url: `${import.meta.env.VITE_API_ENDPOINT}/voltaic/export?limit=9999`,
+        url: encodeURI(
+          `${
+            import.meta.env.VITE_API_ENDPOINT
+          }/voltaic/export?limit=9999&startDate=${startDateTime.toISOString()}&endDate=${endDateTime.toISOString()}`
+        ),
       };
       const resp = await get(request);
       console.log('res', resp);
@@ -318,6 +324,23 @@ function MapProvider({ children }) {
     }
   }, []);
 
+  const getDateRange = useCallback(async (startDateParam, endDateParam) => {
+    dispatch({ type: 'FETCHING' });
+
+    try {
+      dispatch({
+        type: 'FETCHED',
+        startDate: startDateParam,
+        endDate: endDateParam,
+      });
+    } catch (e) {
+      dispatch({
+        type: 'ERROR',
+        errorMsg: 'Something went wrong in fetching dates.',
+      });
+    }
+  }, []);
+
   useEffect(() => {
     async function fetchManilaLamp() {
       await getLamp1();
@@ -353,6 +376,14 @@ function MapProvider({ children }) {
       fetchLamp3();
     }
   }, [getLamp3, lamp3]);
+  useEffect(() => {
+    async function fetchDateRange() {
+      await getDateRange();
+    }
+    if (!startDate && !endDate) {
+      fetchDateRange(startDate, endDate);
+    }
+  }, [getDateRange, startDate, endDate]);
 
   return (
     <MapContext.Provider
@@ -364,6 +395,7 @@ function MapProvider({ children }) {
         getLamp3,
         exportSummary,
         list,
+        getDateRange,
       }}
     >
       <Toaster />
