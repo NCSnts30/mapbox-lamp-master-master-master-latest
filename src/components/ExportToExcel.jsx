@@ -7,14 +7,14 @@ import { CiExport } from 'react-icons/ci';
 import { useMap } from '../context/MapContext';
 
 const ExportToExcel = () => {
-  const { exportSummary } = useMap();
+  const { exportSummary, startDate, endDate } = useMap();
   return (
     <div>
       <button
         onClick={(e) => {
           e.preventDefault();
           console.log('test');
-          exportSummary();
+          exportSummary(startDate, endDate);
         }}
         className="px-6 py-4 bg-green-700 hover:bg-green-900 rounded-xl  shadow-xl"
       >

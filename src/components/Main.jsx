@@ -5,9 +5,12 @@ import Table from './Table';
 import ExportToExcel from './ExportToExcel';
 import Graphs from './Graphs';
 import Graphs2 from './Graphs2';
+import DateTimePicker from 'react-datetime-picker';
 
 function Main() {
   const {
+    startDate,
+    endDate,
     batteryCurrent,
     batteryPower,
     batteryVoltage,
@@ -19,8 +22,15 @@ function Main() {
     solarVoltage,
     temperature,
     receivedAt,
+    getDateRange,
   } = useMap();
+  const [startDt, getStartDt] = useState(startDate);
+  const [endDt, getEndDt] = useState(endDate);
   const [isLoggedIn, setIsLoggedIn] = useState();
+
+  useEffect(() => {
+    getDateRange(startDt, endDt);
+  }, [startDt, endDt]);
 
   useEffect(() => {
     const ili = localStorage.getItem('isLoggedIn');
@@ -29,7 +39,7 @@ function Main() {
     } else {
       window.location.replace('/login');
     }
-  });
+  }, []);
   return (
     <main>
       <div className="container-fluid px-4" id="dashboard">
@@ -123,8 +133,14 @@ function Main() {
               <div className="card-body">
                 <div>
                   <Map />
-                  <div className="flex justify-center">
+                  <div className="flex justify-center gap-10">
                     <ExportToExcel />
+                    <div className="flex flex-col">
+                      <span>Start Date and Time</span>
+                      <DateTimePicker onChange={getStartDt} value={startDt} />
+                      <span>End Date and Time</span>
+                      <DateTimePicker onChange={getEndDt} value={endDt} />
+                    </div>
                   </div>
                 </div>
               </div>
