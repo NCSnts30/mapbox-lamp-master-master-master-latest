@@ -31,6 +31,7 @@ const initialState = {
   solarPower: 0,
   solarVoltage: 0,
   temperature: 0,
+  soc: 0,
   receivedAt: null,
   actionId: -1,
   isOpen: true,
@@ -161,6 +162,7 @@ function MapProvider({ children }) {
           solarCurrent,
           solarPower,
           solarVoltage,
+          soc,
           temperature,
           receivedAt,
           nodeId,
@@ -180,6 +182,7 @@ function MapProvider({ children }) {
           solarVoltage,
           temperature,
           receivedAt,
+          soc,
           nodeId,
           lists,
         });
@@ -225,6 +228,7 @@ function MapProvider({ children }) {
           solarVoltage,
           temperature,
           receivedAt,
+          soc,
           nodeId,
         } = data;
 
@@ -243,6 +247,7 @@ function MapProvider({ children }) {
           temperature,
           receivedAt,
           nodeId,
+          soc,
           lists,
         });
       } else {
@@ -285,6 +290,7 @@ function MapProvider({ children }) {
           solarPower,
           solarVoltage,
           temperature,
+          soc,
           receivedAt,
           nodeId,
         } = data;
@@ -304,6 +310,7 @@ function MapProvider({ children }) {
           temperature,
           receivedAt,
           nodeId,
+          soc,
           lists,
         });
       } else {

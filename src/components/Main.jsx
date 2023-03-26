@@ -14,9 +14,9 @@ function Main() {
     batteryCurrent,
     batteryPower,
     batteryVoltage,
-    isOnline,
     luminosity,
     rssi,
+    soc,
     solarCurrent,
     solarPower,
     solarVoltage,
@@ -45,7 +45,7 @@ function Main() {
       <div className="container-fluid px-4" id="dashboard">
         <h1 className="mt-4">Dashboard</h1>
 
-        <div className="row">
+        <div className="row flex justify-center">
           <div className="col-xl-3 col-md-6">
             <div className="card bg-primary text-white mb-4">
               <div className="card-body">
@@ -67,7 +67,7 @@ function Main() {
             </div>
           </div>
           <div className="col-xl-3 col-md-6">
-            <div className="card bg-warning text-white mb-4">
+            <div className="card bg-green-600 text-white mb-4">
               <div className="card-body">
                 Battery Current: {Number(batteryCurrent).toFixed(2)} <br />
                 Solar Current: {Number(solarCurrent).toFixed(2)}
@@ -86,7 +86,7 @@ function Main() {
             </div>
           </div>
           <div className="col-xl-3 col-md-6">
-            <div className="card bg-danger text-white mb-4">
+            <div className="card bg-cyan-700 text-white mb-4">
               <div className="card-body">
                 Battery Power: {Number(batteryPower).toFixed(4)} <br /> Solar
                 Power: {Number(solarPower).toFixed(4)}
@@ -105,9 +105,45 @@ function Main() {
             </div>
           </div>
           <div className="col-xl-3 col-md-6">
-            <div className="card bg-success text-white mb-4">
+            <div className="card bg-yellow-500 text-white mb-4">
               <div className="card-body">
                 Luminosity: {Number(luminosity).toFixed(2)}
+              </div>
+              <div className="card-footer d-flex align-items-center justify-content-between">
+                <a
+                  className="small text-white stretched-link"
+                  href="#ViewDetails"
+                >
+                  View Details
+                </a>
+                <div className="small text-white">
+                  <i className="fas fa-angle-right" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-3 col-md-6">
+            <div className="card bg-orange-400 text-white mb-4">
+              <div className="card-body">
+                Temperature: {Number(temperature).toFixed(2)}
+              </div>
+              <div className="card-footer d-flex align-items-center justify-content-between">
+                <a
+                  className="small text-white stretched-link"
+                  href="#ViewDetails"
+                >
+                  View Details
+                </a>
+                <div className="small text-white">
+                  <i className="fas fa-angle-right" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-3 col-md-6">
+            <div className="card bg-emerald-600 text-white mb-4">
+              <div className="card-body">
+                State of Charge: {Number(soc).toFixed(2)}
               </div>
               <div className="card-footer d-flex align-items-center justify-content-between">
                 <a
