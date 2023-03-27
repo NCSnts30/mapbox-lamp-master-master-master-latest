@@ -248,21 +248,21 @@ nav li {
   }
 }
 
-@media (max-width: 422px) {
+@media (max-width: 425px) {
   .div10 {
-    height: 1300px; /* adjust height as needed */
+    height: 1325px; /* adjust height as needed */
   }
   .div11 {
     height: 1000px; /* adjust height as needed */
   }
 }
 
-@media (max-width: 403px) {
+@media (max-width: 407px) {
   .div10 {
-    height: 1400px; /* adjust height as needed */
+    height: 1350px; /* adjust height as needed */
   }
   .div11 {
-    height: 1070px; /* adjust height as needed */
+    height: 1110px; /* adjust height as needed */
   }
 }
 
@@ -281,6 +281,14 @@ nav li {
   }
   .div11 {
     height: 1100px; /* adjust height as needed */
+  }
+}
+@media (max-width: 371px) {
+  .div10 {
+    height: 1550px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 1150px; /* adjust height as needed */
   }
 }
 
@@ -308,6 +316,15 @@ nav li {
     height: 1300px; /* adjust height as needed */
   }
 }
+@media (max-width: 329px) {
+  .div10 {
+    height: 1700px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 1350px; /* adjust height as needed */
+  }
+}
+
 
 @media (max-width: 320px) {
   .div10 {
@@ -327,18 +344,39 @@ nav li {
   }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 301px) {
   .div10 {
-    height: 2100px; /* adjust height as needed */
+    height: 2000px; /* adjust height as needed */
   }
   .div11 {
-    height: 1700px; /* adjust height as needed */
+    height: 1600px; /* adjust height as needed */
   }
 }
 
-@media (max-width: 270px) {
+@media (max-width: 295px) {
+  .div10 {
+    height: 2020px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 1620px; /* adjust height as needed */
+  }
+}
+
+@media (max-width: 287px) {
+  .div10 {
+    height: 2050px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 1650px; /* adjust height as needed */
+  }
+}
+
+@media (max-width: 271px) {
   .div10 {
     height: 2400px; /* adjust height as needed */
+  }
+  .div11 {
+    height: 1700px; /* adjust height as needed */
   }
 }
 @media (max-width: 248px) {
