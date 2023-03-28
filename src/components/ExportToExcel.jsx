@@ -7,11 +7,33 @@ import { CiExport } from 'react-icons/ci';
 import { useMap } from '../context/MapContext';
 import Swal from 'sweetalert2';
 import moment from 'moment';
+import 'react-tippy/dist/tippy.css';
+import { Tooltip } from 'react-tippy';
+import { FaQuestionCircle } from 'react-icons/fa';
 
 const ExportToExcel = () => {
   const { exportSummary, startDate, endDate } = useMap();
+
   return (
     <div>
+      <Tooltip
+        title="This will export the data from the selected date range."
+        id="export-data"
+        place="right"
+        effect="solid"
+        trigger="click"
+        interactive
+        onClickOutside={(tooltip) => tooltip.hide()}
+        overridePosition={({ left, top }) => ({ left: left - 5, top: top - 5 })}
+      >
+        <div style={{ position: 'relative' }}>
+          <FaQuestionCircle
+            className="text-gray-800 cursor-help"
+            style={{ position: 'absolute', top: '-15px', right: '-8px' }}
+          />
+        </div>
+      </Tooltip>
+
       <button
         onClick={(e) => {
           e.preventDefault();
@@ -43,7 +65,7 @@ const ExportToExcel = () => {
             }
           });
         }}
-        className="px-6 py-4 bg-green-700 hover:bg-green-900 rounded-xl  shadow-xl"
+        className="px-6 py-4 bg-green-700 hover:bg-green-900 rounded-xl shadow-xl"
       >
         <span className="flex place-items-center gap-2 text-white">
           <CiExport /> <p>Export Summary</p>

@@ -41,6 +41,8 @@
     "react-scroll": "^1.8.9",
     "react-scroll-parallax": "^3.3.2",
     "react-spinners": "^0.13.8",
+    "react-tippy": "^1.4.0",
+    "react-tooltip": "^5.10.1",
     "react-typed": "^1.2.0",
     "reactstrap": "^9.1.5",
     "rsuite": "^5.28.2",

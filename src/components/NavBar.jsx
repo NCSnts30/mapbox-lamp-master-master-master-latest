@@ -43,7 +43,7 @@ function NavBar() {
         </li>
 
         <li className="text-white max-md:hidden">
-          <NavLink to="/dashboard">Voltaic</NavLink>
+          <NavLink to="/dashboard">Dashboard</NavLink>
         </li>
         <li className="text-white max-md:hidden">
           <NavLink to="/">
@@ -102,7 +102,7 @@ function NavBar() {
                 </button>
               </li>
               <li className="">
-                <NavLink to="/dashboard">Voltaic</NavLink>
+                <NavLink to="/dashboard">Dashboard</NavLink>
               </li>
               <li className="">
                 <NavLink to="/">
