@@ -17,6 +17,7 @@ function Main() {
     luminosity,
     rssi,
     soc,
+    soh,
     solarCurrent,
     solarPower,
     solarVoltage,
@@ -141,9 +142,27 @@ function Main() {
             </div>
           </div>
           <div className="col-xl-3 col-md-6">
-            <div className="card bg-emerald-600 text-white mb-4">
+            <div className="card bg-orange-900 text-white mb-4">
               <div className="card-body">
                 State of Charge: {Number(soc).toFixed(2)}
+              </div>
+              <div className="card-footer d-flex align-items-center justify-content-between">
+                <a
+                  className="small text-white stretched-link"
+                  href="#ViewDetails"
+                >
+                  View Details
+                </a>
+                <div className="small text-white">
+                  <i className="fas fa-angle-right" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-3 col-md-6">
+            <div className="card bg-emerald-600 text-white mb-4">
+              <div className="card-body">
+                State of Health: {Number(soh).toFixed(2)}
               </div>
               <div className="card-footer d-flex align-items-center justify-content-between">
                 <a

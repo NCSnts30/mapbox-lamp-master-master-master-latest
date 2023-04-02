@@ -32,6 +32,7 @@ const initialState = {
   solarVoltage: 0,
   temperature: 0,
   soc: 0,
+  soh: 0,
   receivedAt: null,
   actionId: -1,
   isOpen: true,
@@ -166,6 +167,7 @@ function MapProvider({ children }) {
           temperature,
           receivedAt,
           nodeId,
+          soh,
         } = data;
 
         dispatch({
@@ -185,6 +187,7 @@ function MapProvider({ children }) {
           soc,
           nodeId,
           lists,
+          soh,
         });
       } else {
         window.location.replace('/login');
@@ -230,6 +233,7 @@ function MapProvider({ children }) {
           receivedAt,
           soc,
           nodeId,
+          soh,
         } = data;
 
         dispatch({
@@ -248,6 +252,7 @@ function MapProvider({ children }) {
           receivedAt,
           nodeId,
           soc,
+          soh,
           lists,
         });
       } else {
@@ -291,6 +296,7 @@ function MapProvider({ children }) {
           solarVoltage,
           temperature,
           soc,
+          soh,
           receivedAt,
           nodeId,
         } = data;
@@ -312,6 +318,7 @@ function MapProvider({ children }) {
           nodeId,
           soc,
           lists,
+          soh,
         });
       } else {
         window.location.replace('/login');

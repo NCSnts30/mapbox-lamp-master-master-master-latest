@@ -30,6 +30,7 @@ function MapComponent() {
     solarVoltage: 0,
     temperature: 0,
     soc: 0,
+    soh: 0,
     receivedAt: null,
   });
 
@@ -54,6 +55,7 @@ function MapComponent() {
       temperature,
       receivedAt,
       soc,
+      soh,
       nodeId,
     } = lamp1;
 
@@ -71,6 +73,7 @@ function MapComponent() {
         temperature,
         nodeId,
         soc,
+        soh,
         receivedAt,
       });
       const limit = 10;
@@ -92,6 +95,7 @@ function MapComponent() {
       temperature,
       receivedAt,
       soc,
+      soh,
       nodeId,
     } = lamp2;
 
@@ -109,6 +113,7 @@ function MapComponent() {
         nodeId,
         temperature,
         soc,
+        soh,
         receivedAt,
       });
       const limit = 10;
@@ -130,6 +135,7 @@ function MapComponent() {
       solarVoltage,
       temperature,
       soc,
+      soh,
       nodeId,
       receivedAt,
     } = lamp3;
@@ -147,6 +153,7 @@ function MapComponent() {
         solarVoltage,
         temperature,
         soc,
+        soh,
         nodeId,
         receivedAt,
       });
@@ -293,6 +300,12 @@ function MapComponent() {
               State of Charge:
               <span className="font-extrabold">
                 {Number(popupData.soc).toFixed(2)}
+              </span>
+            </p>
+            <p>
+              State of Health:
+              <span className="font-extrabold">
+                {Number(popupData.soh).toFixed(2)}
               </span>
             </p>
             <p>

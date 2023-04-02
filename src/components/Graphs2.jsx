@@ -79,11 +79,11 @@ const Graphs2 = () => {
   });
 
   const dataBattPower = {
-    labels: receivedAt,
+    labels: receivedAt.reverse(),
     datasets: [
       {
         label: 'Battery Power',
-        data: batteryPower,
+        data: batteryPower.reverse(),
         fill: false,
         borderColor: '#dc3545',
         tension: 0.1,
@@ -91,11 +91,11 @@ const Graphs2 = () => {
     ],
   };
   const dataBattCurrent = {
-    labels: receivedAt,
+    labels: receivedAt.reverse(),
     datasets: [
       {
         label: 'Battery Current',
-        data: batteryCurrent,
+        data: batteryCurrent.reverse(),
         fill: false,
         borderColor: '#ffc107',
         tension: 0.1,
@@ -103,11 +103,11 @@ const Graphs2 = () => {
     ],
   };
   const dataBattVoltage = {
-    labels: receivedAt,
+    labels: receivedAt.reverse(),
     datasets: [
       {
         label: 'Battery Voltage',
-        data: batteryVoltage,
+        data: batteryVoltage.reverse(),
         fill: false,
         borderColor: '#0d6efd',
         tension: 0.1,
@@ -153,6 +153,18 @@ const Graphs2 = () => {
       },
     },
   };
+  const optionsSOH = {
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: `${nodeId} State of Health Chart`,
+      },
+    },
+  };
   const optionsSolarVoltage = {
     maintainAspectRatio: false,
     plugins: {
@@ -171,6 +183,9 @@ const Graphs2 = () => {
   });
   const soc = lists.map((x) => {
     return x.soc;
+  });
+  const soh = lists.map((x) => {
+    return x.soh;
   });
 
   const solarPower = lists.map((x) => {
@@ -193,11 +208,11 @@ const Graphs2 = () => {
     ],
   };
   const dataSolarCurrent = {
-    labels: receivedAt,
+    labels: receivedAt.reverse(),
     datasets: [
       {
         label: 'Solar Current',
-        data: solarCurrent,
+        data: solarCurrent.reverse(),
         fill: false,
         borderColor: '#ffc107',
         tension: 0.1,
@@ -205,11 +220,11 @@ const Graphs2 = () => {
     ],
   };
   const dataSolarVoltage = {
-    labels: receivedAt,
+    labels: receivedAt.reverse(),
     datasets: [
       {
         label: 'Solar Voltage',
-        data: solarVoltage,
+        data: solarVoltage.reverse(),
         fill: false,
         borderColor: '#0d6efd',
         tension: 0.1,
@@ -217,11 +232,23 @@ const Graphs2 = () => {
     ],
   };
   const dataSOC = {
-    labels: receivedAt,
+    labels: receivedAt.reverse(),
     datasets: [
       {
         label: 'State of Charge',
-        data: soc,
+        data: soc.reverse(),
+        fill: false,
+        borderColor: '#0d6efd',
+        tension: 0.1,
+      },
+    ],
+  };
+  const dataSOH = {
+    labels: receivedAt.reverse(),
+    datasets: [
+      {
+        label: 'State of Health',
+        data: soh.reverse(),
         fill: false,
         borderColor: '#0d6efd',
         tension: 0.1,
@@ -254,6 +281,10 @@ const Graphs2 = () => {
       </div>
       <div className="h-80 w-full">
         <Line options={optionsSOC} data={dataSOC} />
+      </div>
+
+      <div className="h-80 w-full">
+        <Line options={optionsSOH} data={dataSOH} />
       </div>
     </div>
   );

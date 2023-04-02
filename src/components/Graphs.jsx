@@ -75,25 +75,25 @@ const Graphs = () => {
   });
 
   const data = {
-    labels: receivedAt,
+    labels: receivedAt.reverse(),
     datasets: [
       {
         label: 'Battery Power',
-        data: batteryPower,
+        data: batteryPower.reverse(),
         fill: false,
         borderColor: '#dc3545',
         tension: 0.5,
       },
       {
         label: 'Battery Current',
-        data: batteryCurrent,
+        data: batteryCurrent.reverse(),
         fill: false,
         borderColor: '#ffc107',
         tension: 0.5,
       },
       {
         label: 'Battery Voltage',
-        data: batteryVoltage,
+        data: batteryVoltage.reverse(),
         fill: false,
         borderColor: '#0d6efd',
         tension: 0.5,
@@ -101,25 +101,25 @@ const Graphs = () => {
     ],
   };
   const solarData = {
-    labels: receivedAt,
+    labels: receivedAt.reverse(),
     datasets: [
       {
         label: 'Solar Power',
-        data: solarPower,
+        data: solarPower.reverse(),
         fill: false,
         borderColor: 'rgb(160,0,0)',
         tension: 0.5,
       },
       {
         label: 'Solar Current',
-        data: solarCurrent,
+        data: solarCurrent.reverse(),
         fill: false,
         borderColor: 'rgb(160,0,160)',
         tension: 0.5,
       },
       {
         label: 'Solar Voltage',
-        data: solarVoltage,
+        data: solarVoltage.reverse(),
         fill: false,
         borderColor: 'rgb(0,160,0)',
         tension: 0.5,
