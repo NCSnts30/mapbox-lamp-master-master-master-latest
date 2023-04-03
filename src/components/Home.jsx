@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Modal from 'react-modal';
 import Carousel from 'react-elastic-carousel';
 import lamp1 from '../assets/A.jpg';
 import lamp2 from '../assets/B.jpg';
@@ -13,6 +14,8 @@ import PIC2 from '../assets/PIC2.jpg';
 import AboutUs from './AboutUs';
 import './css/home.css';
 import { ParallaxBanner, ParallaxProvider } from 'react-scroll-parallax';
+
+Modal.setAppElement('#root');
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -35,6 +38,20 @@ const layerTwo = {
   shouldAlwaysCompleteAnimation: true,
 };
 
+function Popup(props) {
+  return (
+    <div className="popup">
+      <div className="popup-inner">
+        <button className="close-btn" onClick={props.closePopup}>
+          X
+        </button>
+        <h2>{props.title}</h2>
+        <p>{props.content}</p>
+      </div>
+    </div>
+  );
+}
+
 function Home() {
   const items = [
     { id: 1, src: lamp1 },
@@ -43,8 +60,24 @@ function Home() {
     { id: 4, src: lamp4, title: 'item #4' },
     { id: 5, src: lamp5, title: 'item #5' },
   ];
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen1, setIsModalOpen1] = useState(false);
 
-  const [showFullText, setShowFullText] = useState(false);
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleOpenModal1 = () => {
+    setIsModalOpen1(true);
+  };
+
+  const handleCloseModal1 = () => {
+    setIsModalOpen1(false);
+  };
 
   return (
     <div id="about-us">
@@ -86,32 +119,66 @@ function Home() {
 
             <div className="text-white text-justify drop-shadow-3xl text-2xl">
               <h2 className="abstract">
-                IoT centralized monitoring system with solar streetlight
-                application employing LoRa as a long-range wireless
-                communication between the solar streetlight and the central
-                system and a microcontroller as the main monitoring system. The
-                technology intends to develop the community in the Philippines
-                that has been utilizing conventional streetlights that
-                frequently lack a monitoring mechanism. Traditional streetlights
-                are still used in the Philippines, particularly in rural areas.
-                The primary issue with solar streetlights currently is that they
-                have a short lifespan due to a lack of a system for monitoring.
-                The system covers the monitoring of LED, solar panel, and
-                battery using the current, voltage, temperature, and luminosity
-                sensors of a standalone solar streetlight. LoRa wireless
-                communication is used because of its long-range capabilities (up
-                to 12 km) and low power consumption, and the Arduino Nano is
-                used to gather and transmit data to the NodeMCU, which serves as
-                the system's receiver or central server that provides data to a
-                web-based interface to offer real-time monitoring of solar
-                streetlight parameters such as current, voltage, temperature,
-                battery SOH and SOC, and luminance. The results indicate that
-                the proposed system can track and manage solar streetlights
-                while providing efficient maintenance scheduling. Overall, this
-                system offers a practical solution for managing and optimizing
-                solar streetlight applications, contributing to the development
-                of a sustainable and energy-efficient environment.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
+                excepturi quia vero ipsa amet asperiores sequi illo inventore at
+                optio quam eius alias eligendi, quasi commodi tempora blanditiis
+                aut unde.
               </h2>
+              <button onClick={handleOpenModal} className="read-more-button">
+                Read More
+              </button>
+              <Modal
+                isOpen={isModalOpen}
+                onRequestClose={handleCloseModal}
+                style={{
+                  overlay: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                  },
+                  content: {
+                    top: '50%',
+                    left: '50%',
+                    right: 'auto',
+                    bottom: 'auto',
+                    marginRight: '-50%',
+                    transform: 'translate(-50%, -50%)',
+                    maxWidth: '80vw',
+                    maxHeight: '80vh',
+                    overflow: 'auto',
+                  },
+                }}
+              >
+                <h2 className="abstract">
+                  IoT centralized monitoring system with solar streetlight
+                  application employing LoRa as a long-range wireless
+                  communication between the solar streetlight and the central
+                  system and a microcontroller as the main monitoring system.
+                  The technology intends to develop the community in the
+                  Philippines that has been utilizing conventional streetlights
+                  that frequently lack a monitoring mechanism. Traditional
+                  streetlights are still used in the Philippines, particularly
+                  in rural areas. The primary issue with solar streetlights
+                  currently is that they have a short lifespan due to a lack of
+                  a system for monitoring. The system covers the monitoring of
+                  LED, solar panel, and battery using the current, voltage,
+                  temperature, and luminosity sensors of a standalone solar
+                  streetlight. LoRa wireless communication is used because of
+                  its long-range capabilities (up to 12 km) and low power
+                  consumption, and the Arduino Nano is used to gather and
+                  transmit data to the NodeMCU, which serves as the system's
+                  receiver or central server that provides data to a web-based
+                  interface to offer real-time monitoring of solar streetlight
+                  parameters such as current, voltage, temperature, battery SOH
+                  and SOC, and luminance. The results indicate that the proposed
+                  system can track and manage solar streetlights while providing
+                  efficient maintenance scheduling. Overall, this system offers
+                  a practical solution for managing and optimizing solar
+                  streetlight applications, contributing to the development of a
+                  sustainable and energy-efficient environment.
+                </h2>
+                <button onClick={handleCloseModal} className="read-more-button">
+                  Close
+                </button>
+              </Modal>
             </div>
           </div>
         </ParallaxBanner>
@@ -186,33 +253,70 @@ function Home() {
         <ParallaxBanner layers={[layerTwo]} className="aspect-[3/1] div11">
           <div className="flex flex-col items-center p-6 md:p-12 lg:p-20 xl:p-32 h-full relative">
             <div>
-              <h1 className="text-white uppercase drop-shadow-7xl sm:text-3xl md:text-7xl text-center">
+              <h1 className="text-white uppercase drop-shadow-7xl sm:text-4xl md:text-7xl text-center">
                 Developments
               </h1>
             </div>
 
             <div className="text-white text-justify drop-shadow-2xl text-2xl">
               <h2 className="abstract">
-                The Internet of Things (IoT) is the interconnectivity of
-                physical devices with the internet and other devices. It creates
-                a system of devices that can communicate and perform tasks with
-                minimal human intervention. IoT devices range from simple
-                sensors to complex machinery and are connected to the internet,
-                enabling them to be remotely monitored and controlled. IoT is
-                being used in various industries, including healthcare,
-                manufacturing, transportation, and agriculture. In healthcare,
-                it is used to remotely monitor patients, while in manufacturing,
-                it optimizes production processes and reduces waste. IoT can
-                increase efficiency, reduce costs, and improve safety by
-                collecting and analyzing data, enabling companies to make
-                informed decisions. However, IoT also presents significant
-                challenges, including security and privacy concerns. As more
-                devices are connected to the internet, the risk of cyberattacks
-                increases, and ensuring the security of devices and data is
-                crucial. Overall, IoT has the potential to transform the way we
-                live and work, but addressing security and privacy concerns is
-                essential for its successful implementation.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
+                excepturi quia vero ipsa amet asperiores sequi illo inventore at
+                optio quam eius alias eligendi, quasi commodi tempora blanditiis
+                aut unde.
               </h2>
+              <button onClick={handleOpenModal1} className="read-more-button">
+                Read More
+              </button>
+              <Modal
+                isOpen={isModalOpen1}
+                onRequestClose={handleCloseModal1}
+                style={{
+                  overlay: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                  },
+                  content: {
+                    top: '50%',
+                    left: '50%',
+                    right: 'auto',
+                    bottom: 'auto',
+                    marginRight: '-50%',
+                    transform: 'translate(-50%, -50%)',
+                    maxWidth: '80vw',
+                    maxHeight: '80vh',
+                    overflow: 'auto',
+                  },
+                }}
+              >
+                <h2 className="abstract">
+                  The Internet of Things (IoT) is the interconnectivity of
+                  physical devices with the internet and other devices. It
+                  creates a system of devices that can communicate and perform
+                  tasks with minimal human intervention. IoT devices range from
+                  simple sensors to complex machinery and are connected to the
+                  internet, enabling them to be remotely monitored and
+                  controlled. IoT is being used in various industries, including
+                  healthcare, manufacturing, transportation, and agriculture. In
+                  healthcare, it is used to remotely monitor patients, while in
+                  manufacturing, it optimizes production processes and reduces
+                  waste. IoT can increase efficiency, reduce costs, and improve
+                  safety by collecting and analyzing data, enabling companies to
+                  make informed decisions. However, IoT also presents
+                  significant challenges, including security and privacy
+                  concerns. As more devices are connected to the internet, the
+                  risk of cyberattacks increases, and ensuring the security of
+                  devices and data is crucial. Overall, IoT has the potential to
+                  transform the way we live and work, but addressing security
+                  and privacy concerns is essential for its successful
+                  implementation.
+                </h2>
+                <button
+                  onClick={handleCloseModal1}
+                  className="read-more-button"
+                >
+                  Close
+                </button>
+              </Modal>
             </div>
           </div>
         </ParallaxBanner>
