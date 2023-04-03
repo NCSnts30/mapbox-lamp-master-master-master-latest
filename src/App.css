@@ -165,9 +165,9 @@ nav li {
     height: 600px; /* adjust height as needed */
   }
 }
-@media (max-width: 930px) {
+@media (max-width: 934px) {
   .div10 {
-    height: 700px; /* adjust height as needed */
+    height: 710px; /* adjust height as needed */
   }
 }
 @media (max-width: 890px) {
@@ -394,7 +394,14 @@ nav li {
   }
 }
 
-/* Styles for the tooltip container */
+/* pop out window */
+.popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 
 

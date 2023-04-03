@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Carousel from 'react-elastic-carousel';
 import lamp1 from '../assets/A.jpg';
 import lamp2 from '../assets/B.jpg';
@@ -12,12 +12,7 @@ import PIC1 from '../assets/PIC1.jpg';
 import PIC2 from '../assets/PIC2.jpg';
 import AboutUs from './AboutUs';
 import './css/home.css';
-import {
-  Parallax,
-  ParallaxBanner,
-  ParallaxProvider,
-  useParallax,
-} from 'react-scroll-parallax';
+import { ParallaxBanner, ParallaxProvider } from 'react-scroll-parallax';
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -49,18 +44,21 @@ function Home() {
     { id: 5, src: lamp5, title: 'item #5' },
   ];
 
+  const [showFullText, setShowFullText] = useState(false);
+
   return (
     <div id="about-us">
       <div className="flex flex-col items-center bg-teal-500 p-6 md:p-12 lg:p-20 xl:p-32 h-full relative">
-        <div>
-          <h1 className="text-white uppercase drop-shadow-3xl sm:text-5x1 md:block sm:text-4xl md:text-8xl sm:text-center sm:w-full">
+        <div className="sm:text-5xl md:text-8xl">
+          <h1 className="text-white uppercase drop-shadow-3xl sm:text-7xl text-5xl ">
             VOLTAIC V
           </h1>
         </div>
-        <div className="text-white text-justify drop-shadow-3xl text-2xl">
+        <div className="text-white text-justify drop-shadow-3xl text-xl sm:text-xl md:text-2xl">
           IOT Centralized Monitoring System for Solar Streetlight Application
           using LoRa with Microcontroller
         </div>
+
         <Carousel
           breakPoints={breakPoints}
           className="mt-10 md:mt-20 lg:mt-40 bg-white bg-opacity-10 backdrop-blur-md md:backdrop-blur-lg rounded drop-shadow-2xl md:drop-shadow-3xl p-4 md:p-6 lg:p-12 xl:p-20"
