@@ -26,9 +26,11 @@ function AboutUs() {
 
       <div className="flex flex-col">
         <div className="bg-slate-800 w-full text-white p-10">
-          <p className="text-4xl md:text-5xl lg:text-6xl">OUR TEAM</p>
+          <p className="flex justify-center text-4xl md:text-5xl lg:text-6xl">
+            OUR TEAM
+          </p>
           <div className="mt-4 mb-4">
-            <p className="text-base md:text-lg lg:text-xl">
+            <p className="flex justify-center text-base md:text-lg lg:text-xl">
               Meet the members of Voltaic V, along with the tutelage of
               Engr.Mark Melegrito
             </p>
