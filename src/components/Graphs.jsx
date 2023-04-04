@@ -59,10 +59,10 @@ const Graphs = () => {
   const batteryVoltage = lists.map((x) => {
     return x.batteryVoltage;
   });
-  const receivedAt = lists.map((x) => {
+  let receivedAt = lists.map((x) => {
     return moment(x.receivedAt).format('MMMM Do YYYY, h:mm:ss a');
   });
-
+  receivedAt = receivedAt.reverse();
   const solarVoltage = lists.map((x) => {
     return x.solarVoltage;
   });

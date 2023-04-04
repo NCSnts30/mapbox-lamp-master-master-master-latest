@@ -74,12 +74,14 @@ const Graphs2 = () => {
     return x.batteryCurrent;
   });
 
-  const receivedAt = lists.map((x) => {
+  let receivedAt = lists.map((x) => {
     return moment(x.receivedAt).format('MMMM Do YYYY, h:mm:ss a');
   });
 
+  receivedAt = receivedAt.reverse();
+
   const dataBattPower = {
-    labels: receivedAt.reverse(),
+    labels: receivedAt,
     datasets: [
       {
         label: 'Battery Power',
@@ -91,7 +93,7 @@ const Graphs2 = () => {
     ],
   };
   const dataBattCurrent = {
-    labels: receivedAt.reverse(),
+    labels: receivedAt,
     datasets: [
       {
         label: 'Battery Current',
@@ -103,7 +105,7 @@ const Graphs2 = () => {
     ],
   };
   const dataBattVoltage = {
-    labels: receivedAt.reverse(),
+    labels: receivedAt,
     datasets: [
       {
         label: 'Battery Voltage',
@@ -208,7 +210,7 @@ const Graphs2 = () => {
     ],
   };
   const dataSolarCurrent = {
-    labels: receivedAt.reverse(),
+    labels: receivedAt,
     datasets: [
       {
         label: 'Solar Current',
@@ -220,7 +222,7 @@ const Graphs2 = () => {
     ],
   };
   const dataSolarVoltage = {
-    labels: receivedAt.reverse(),
+    labels: receivedAt,
     datasets: [
       {
         label: 'Solar Voltage',
@@ -232,7 +234,7 @@ const Graphs2 = () => {
     ],
   };
   const dataSOC = {
-    labels: receivedAt.reverse(),
+    labels: receivedAt,
     datasets: [
       {
         label: 'State of Charge',
@@ -244,7 +246,7 @@ const Graphs2 = () => {
     ],
   };
   const dataSOH = {
-    labels: receivedAt.reverse(),
+    labels: receivedAt,
     datasets: [
       {
         label: 'State of Health',
