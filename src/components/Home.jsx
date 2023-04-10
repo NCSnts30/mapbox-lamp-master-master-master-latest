@@ -119,10 +119,10 @@ function Home() {
 
             <div className="text-white text-justify drop-shadow-3xl text-2xl">
               <h2 className="abstract">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
-                excepturi quia vero ipsa amet asperiores sequi illo inventore at
-                optio quam eius alias eligendi, quasi commodi tempora blanditiis
-                aut unde.
+                IoT centralized monitoring system with solar streetlight
+                application employing LoRa as a long-range wireless
+                communication between the solar streetlight and the central
+                system and a microcontroller as the main monitoring system.
               </h2>
               <button onClick={handleOpenModal} className="read-more-button">
                 Read More
@@ -199,10 +199,10 @@ function Home() {
                 </h1>
               </div>
               <h5 className="text-white text-justify drop-shadow-3xl text-1xl md:text-1xl hide-below-1590">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Molestiae iure cum quas. Cum obcaecati quos a quod officiis
-                explicabo reprehenderit quis impedit ut temporibus? Iure
-                reprehenderit eligendi blanditiis vitae? Sapiente.
+                The system includes a WiFi module that serves as the central
+                server, receiving data from the three lights and sending it to
+                the website to monitor the parameters. This functions as an IoT
+                system.
               </h5>
             </div>
           </div>
@@ -219,10 +219,10 @@ function Home() {
                 </h1>
               </div>
               <h5 className="text-white text-justify drop-shadow-3xl text-1xl md:text-1xl hide-below-1590">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Molestiae iure cum quas. Cum obcaecati quos a quod officiis
-                explicabo reprehenderit quis impedit ut temporibus? Iure
-                reprehenderit eligendi blanditiis vitae? Sapiente.
+                This webpage allows the user to view the historical and
+                contemporary monitoring systems. It can export the data of the
+                parameters from the previous hours and days in order to monitor
+                and compare their state.
               </h5>
             </div>
           </div>
@@ -239,10 +239,12 @@ function Home() {
                 </h1>
               </div>
               <h5 className="text-white text-justify drop-shadow-3xl text-1xl md:text-1xl hide-below-1590">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Molestiae iure cum quas. Cum obcaecati quos a quod officiis
-                explicabo reprehenderit quis impedit ut temporibus? Iure
-                reprehenderit eligendi blanditiis vitae? Sapiente.
+                It is considered environmentally friendly because it eliminates
+                the need for paper-based communication by using a web
+                application to monitor the solar streetlight. It reduced the
+                carbon footprint that was associated with manufacturing and
+                transportation. Additionally, it reduces energy consumption and
+                greenhouse gas emissions by using energy-efficient servers.
               </h5>
             </div>
           </div>
@@ -260,10 +262,12 @@ function Home() {
 
             <div className="text-white text-justify drop-shadow-2xl text-2xl">
               <h2 className="abstract">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
-                excepturi quia vero ipsa amet asperiores sequi illo inventore at
-                optio quam eius alias eligendi, quasi commodi tempora blanditiis
-                aut unde.
+                The Internet of Things (IoT) is the interconnectivity of
+                physical devices with the internet and other devices. It creates
+                a system of devices that can communicate and perform tasks with
+                minimal human intervention. IoT devices range from simple
+                sensors to complex machinery and are connected to the internet,
+                enabling them to be remotely monitored and controlled.
               </h2>
               <button onClick={handleOpenModal1} className="read-more-button">
                 Read More
