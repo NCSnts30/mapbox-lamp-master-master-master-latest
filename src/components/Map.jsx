@@ -6,6 +6,7 @@ import streetLamp from '../assets/street-lamp.png';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useMap } from '../context/MapContext';
 import toast, { Toaster } from 'react-hot-toast';
+import Swal from 'sweetalert2';
 
 function MapComponent() {
   const { isLoading, lamp1, lamp2, lamp3, getLamp1, getLamp2, getLamp3, list } =
@@ -78,6 +79,40 @@ function MapComponent() {
       });
       const limit = 10;
       list(nodeId, limit);
+
+      if (solarVoltage >= 5 || batteryVoltage >= 5) {
+        Swal.fire({
+          title: 'Lamp 1 must be overcharged',
+          text: 'Check the voltage',
+          icon: 'error',
+          confirmButtonText: 'Okay',
+        });
+      }
+      if (solarCurrent >= 2 || solarCurrent >= 2) {
+        Swal.fire({
+          title: 'Lamp 1 must be faulty',
+          text: 'Check the current',
+          icon: 'error',
+          confirmButtonText: 'Okay',
+        });
+      }
+      if (temperature >= 55) {
+        Swal.fire({
+          title: 'Lamp 1 must be overheating',
+          text: 'Check the temperature',
+          icon: 'error',
+          confirmButtonText: 'Okay',
+        });
+      }
+      if (soc === 2.5) {
+        Swal.fire({
+          title:
+            'Lamp 1 estimation is constant at 2.5V, battery is fully drained and not charging, ned to be replaced',
+          text: 'Check the SOC',
+          icon: 'error',
+          confirmButtonText: 'Okay',
+        });
+      }
     }
   }, [lamp1]);
 
@@ -117,7 +152,39 @@ function MapComponent() {
         receivedAt,
       });
       const limit = 10;
-
+      if (solarVoltage >= 5 || batteryVoltage >= 5) {
+        Swal.fire({
+          title: 'Lamp 2 must be overcharged',
+          text: 'Check the voltage',
+          icon: 'error',
+          confirmButtonText: 'Okay',
+        });
+      }
+      if (solarCurrent >= 2 || solarCurrent >= 2) {
+        Swal.fire({
+          title: 'Lamp 2 must be faulty',
+          text: 'Check the current',
+          icon: 'error',
+          confirmButtonText: 'Okay',
+        });
+      }
+      if (temperature >= 55) {
+        Swal.fire({
+          title: 'Lamp 2 must be overheating',
+          text: 'Check the temperature',
+          icon: 'error',
+          confirmButtonText: 'Okay',
+        });
+      }
+      if (soc === 2.5) {
+        Swal.fire({
+          title:
+            'Lamp 2 estimation is constant at 2.5V, battery is fully drained and not charging, ned to be replaced',
+          text: 'Check the SOC',
+          icon: 'error',
+          confirmButtonText: 'Okay',
+        });
+      }
       list(nodeId, limit);
     }
   }, [lamp2]);
@@ -159,7 +226,39 @@ function MapComponent() {
       });
     }
     const limit = 10;
-
+    if (solarVoltage >= 5 || batteryVoltage >= 5) {
+      Swal.fire({
+        title: 'Lamp 3 must be overcharged',
+        text: 'Check the voltage',
+        icon: 'error',
+        confirmButtonText: 'Okay',
+      });
+    }
+    if (solarCurrent >= 2 || solarCurrent >= 2) {
+      Swal.fire({
+        title: 'Lamp 3 must be faulty',
+        text: 'Check the current',
+        icon: 'error',
+        confirmButtonText: 'Okay',
+      });
+    }
+    if (temperature >= 55) {
+      Swal.fire({
+        title: 'Lamp 3 must be overheating',
+        text: 'Check the temperature',
+        icon: 'error',
+        confirmButtonText: 'Okay',
+      });
+    }
+    if (soc === 2.5) {
+      Swal.fire({
+        title:
+          'Lamp 3 estimation is constant at 2.5V, battery is fully drained and not charging, ned to be replaced',
+        text: 'Check the SOC',
+        icon: 'error',
+        confirmButtonText: 'Okay',
+      });
+    }
     list(nodeId, limit);
   }, [lamp3]);
 
@@ -185,7 +284,7 @@ function MapComponent() {
         style={{ height: 500, width: 1000, display: 'flex' }}
       >
         <Marker
-          className="Manila"
+          className="Node1"
           longitude="120.955716"
           latitude="14.743110"
           anchor="bottom"
@@ -199,28 +298,28 @@ function MapComponent() {
         </Marker>
 
         <Marker
-          className="Manila"
-          longitude="120.957497"
-          latitude="14.741006"
+          className="Node2"
+          longitude="120.956306"
+          latitude="14.743278"
           anchor="bottom"
           onClick={() => {
             getLamp2();
             setShowPopup(true);
-            setPopUpLongAndLat({ long: '120.957497', lat: '14.741006' });
+            setPopUpLongAndLat({ long: '120.956306', lat: '14.743278' });
           }}
         >
           <img src={streetLamp} height={50} width={50} alt="street lamp" />
         </Marker>
 
         <Marker
-          className="Manila"
-          longitude="120.957844"
-          latitude="14.741041"
+          className="Node3"
+          longitude="120.955500"
+          latitude="14.743028"
           anchor="bottom"
           onClick={() => {
             getLamp3();
             setShowPopup(true);
-            setPopUpLongAndLat({ long: '120.957844', lat: '14.741041' });
+            setPopUpLongAndLat({ long: '120.955500', lat: '14.743028' });
           }}
         >
           <img src={streetLamp} height={50} width={50} alt="street lamp" />

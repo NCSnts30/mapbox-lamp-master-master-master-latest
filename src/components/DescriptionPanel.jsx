@@ -2,18 +2,20 @@ import React, { useEffect } from 'react';
 
 import Swal from 'sweetalert2';
 
-function DescriptionPanel({ volts, power, current, luminosity, place }) {
-  useEffect(() => {
-    if (volts < 10) {
-      Swal.fire({
-        title: 'Volts is under 10',
-        text: 'Check the volt',
-        icon: 'error',
-        confirmButtonText: 'Okay',
-      });
-    }
-  }, [volts]);
-
+function DescriptionPanel({
+  batteryCurrent,
+  batteryPower,
+  batteryVoltage,
+  isOnline,
+  luminosity,
+  rssi,
+  solarCurrent,
+  solarPower,
+  solarVoltage,
+  temperature,
+  soc,
+  soh,
+}) {
   return (
     <div className="flex flex-col space-x-3 bg-neutral-600 w-full p-4 justify-center items-center">
       <div>

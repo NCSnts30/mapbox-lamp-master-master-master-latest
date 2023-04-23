@@ -63,6 +63,38 @@ const Graphs2 = () => {
     },
   };
 
+  const optionsTemperature = {
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: `${nodeId} Temperature Chart`,
+      },
+    },
+  };
+  const optionsLuminosity = {
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: `${nodeId} Luminosity Chart`,
+      },
+    },
+  };
+
+  const temperature = lists.map((x) => {
+    return x.temperature;
+  });
+  const luminosity = lists.map((x) => {
+    return x.luminosity;
+  });
+
   const batteryVoltage = lists.map((x) => {
     return x.batteryVoltage;
   });
@@ -110,6 +142,30 @@ const Graphs2 = () => {
       {
         label: 'Battery Voltage',
         data: batteryVoltage.reverse(),
+        fill: false,
+        borderColor: '#0d6efd',
+        tension: 0.1,
+      },
+    ],
+  };
+  const dataLuminosity = {
+    labels: receivedAt,
+    datasets: [
+      {
+        label: 'Luminosity',
+        data: luminosity.reverse(),
+        fill: false,
+        borderColor: '#0d6efd',
+        tension: 0.1,
+      },
+    ],
+  };
+  const dataTemperature = {
+    labels: receivedAt,
+    datasets: [
+      {
+        label: 'Temperature',
+        data: temperature.reverse(),
         fill: false,
         borderColor: '#0d6efd',
         tension: 0.1,
@@ -259,6 +315,14 @@ const Graphs2 = () => {
   };
   return (
     <div>
+      <div className=" h-full flex gap-8">
+        <div className="h-80 w-full">
+          <Line options={optionsTemperature} data={dataTemperature} />
+        </div>
+        <div className=" h-80 w-full">
+          <Line options={optionsLuminosity} data={dataLuminosity} />
+        </div>
+      </div>
       <div className=" h-full flex gap-8">
         <div className="h-80 w-full">
           <Line options={optionsBatteryPower} data={dataBattPower} />
