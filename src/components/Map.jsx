@@ -291,7 +291,7 @@ function MapComponent() {
           onClick={() => {
             getLamp1();
             setShowPopup(true);
-            setPopUpLongAndLat({ long: '120.955716', lat: '14.743110' });
+            setPopUpLongAndLat({ long: '120.955222', lat: '14.743256' });
           }}
         >
           <img src={streetLamp} height={50} width={50} alt="street lamp" />
@@ -305,7 +305,7 @@ function MapComponent() {
           onClick={() => {
             getLamp2();
             setShowPopup(true);
-            setPopUpLongAndLat({ long: '120.956306', lat: '14.743278' });
+            setPopUpLongAndLat({ long: '120.956295', lat: '14.7433129' });
           }}
         >
           <img src={streetLamp} height={50} width={50} alt="street lamp" />
@@ -319,7 +319,7 @@ function MapComponent() {
           onClick={() => {
             getLamp3();
             setShowPopup(true);
-            setPopUpLongAndLat({ long: '120.955500', lat: '14.743028' });
+            setPopUpLongAndLat({ long: '120.9555461', lat: '14.7429909' });
           }}
         >
           <img src={streetLamp} height={50} width={50} alt="street lamp" />
