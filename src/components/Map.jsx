@@ -13,9 +13,9 @@ function MapComponent() {
     useMap();
 
   const [viewport, setViewPort] = useState({
-    longitude: 120.955716,
-    latitude: 14.74311,
-    zoom: 15,
+    longitude: 120.9558,
+    latitude: 14.7432,
+    zoom: 19,
   });
   const [popupData, setPopupData] = useState({
     long: 0,
@@ -41,6 +41,12 @@ function MapComponent() {
   });
 
   const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    getLamp1();
+    setShowPopup(true);
+    setPopUpLongAndLat({ long: '120.956279', lat: '14.743260' });
+  }, []);
 
   useEffect(() => {
     const {
@@ -285,13 +291,13 @@ function MapComponent() {
       >
         <Marker
           className="Node1"
-          longitude="120.955716"
-          latitude="14.743110"
+          longitude="120.956279"
+          latitude="14.743260"
           anchor="bottom"
           onClick={() => {
             getLamp1();
             setShowPopup(true);
-            setPopUpLongAndLat({ long: '120.955222', lat: '14.743256' });
+            setPopUpLongAndLat({ long: '120.956279', lat: '14.743260' });
           }}
         >
           <img src={streetLamp} height={50} width={50} alt="street lamp" />

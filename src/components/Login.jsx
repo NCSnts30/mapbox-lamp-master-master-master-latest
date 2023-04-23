@@ -20,7 +20,7 @@ function Login() {
       [name]: v,
     });
   };
-  console.log(values);
+
   const onSubmit = async () => {
     if (!values.password) {
       toast.error('Password is required!');
