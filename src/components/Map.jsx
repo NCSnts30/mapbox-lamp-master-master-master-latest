@@ -94,7 +94,7 @@ function MapComponent() {
           confirmButtonText: 'Okay',
         });
       }
-      if (solarCurrent >= 2 || solarCurrent >= 2) {
+      if (solarCurrent === 2 || batteryCurrent === 2) {
         Swal.fire({
           title: 'Lamp 1 must be faulty',
           text: 'Check the current',
@@ -166,7 +166,7 @@ function MapComponent() {
           confirmButtonText: 'Okay',
         });
       }
-      if (solarCurrent >= 2 || solarCurrent >= 2) {
+      if (solarCurrent === 2 || batteryCurrent === 2) {
         Swal.fire({
           title: 'Lamp 2 must be faulty',
           text: 'Check the current',
@@ -240,7 +240,7 @@ function MapComponent() {
         confirmButtonText: 'Okay',
       });
     }
-    if (solarCurrent >= 2 || solarCurrent >= 2) {
+    if (solarCurrent === 2 || batteryCurrent === 2) {
       Swal.fire({
         title: 'Lamp 3 must be faulty',
         text: 'Check the current',
