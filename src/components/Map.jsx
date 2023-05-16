@@ -86,7 +86,7 @@ function MapComponent() {
       const limit = 10;
       list(nodeId, limit);
 
-      if (solarVoltage >= 5 || batteryVoltage >= 5) {
+      if (solarVoltage === 20 || batteryVoltage === 20) {
         Swal.fire({
           title: 'Lamp 1 must be overcharged',
           text: 'Check the voltage',
@@ -94,7 +94,7 @@ function MapComponent() {
           confirmButtonText: 'Okay',
         });
       }
-      if (solarCurrent === 2 || batteryCurrent === 2) {
+      if (solarCurrent === 10|| batteryCurrent === 10) {
         Swal.fire({
           title: 'Lamp 1 must be faulty',
           text: 'Check the current',
@@ -158,7 +158,7 @@ function MapComponent() {
         receivedAt,
       });
       const limit = 10;
-      if (solarVoltage >= 5 || batteryVoltage >= 5) {
+      if (solarVoltage === 20 || batteryVoltage === 20) {
         Swal.fire({
           title: 'Lamp 2 must be overcharged',
           text: 'Check the voltage',
@@ -166,7 +166,7 @@ function MapComponent() {
           confirmButtonText: 'Okay',
         });
       }
-      if (solarCurrent === 2 || batteryCurrent === 2) {
+      if (solarCurrent === 10 || batteryCurrent === 10) {
         Swal.fire({
           title: 'Lamp 2 must be faulty',
           text: 'Check the current',
@@ -232,7 +232,7 @@ function MapComponent() {
       });
     }
     const limit = 10;
-    if (solarVoltage >= 5 || batteryVoltage >= 5) {
+    if (solarVoltage === 20 || batteryVoltage === 20) {
       Swal.fire({
         title: 'Lamp 3 must be overcharged',
         text: 'Check the voltage',
@@ -240,7 +240,7 @@ function MapComponent() {
         confirmButtonText: 'Okay',
       });
     }
-    if (solarCurrent === 2 || batteryCurrent === 2) {
+    if (solarCurrent === 10 || batteryCurrent === 10) {
       Swal.fire({
         title: 'Lamp 3 must be faulty',
         text: 'Check the current',
