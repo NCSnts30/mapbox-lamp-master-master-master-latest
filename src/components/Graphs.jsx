@@ -39,6 +39,7 @@ const Graphs = () => {
   };
   const optionsSolarLamp = {
     maintainAspectRatio: false,
+   
     plugins: {
       legend: {
         position: 'top',
@@ -51,7 +52,7 @@ const Graphs = () => {
   };
 
   const batteryPower = lists.map((x) => {
-    return x.batteryPower;
+    return `${x.batteryPower} P`;
   });
   const batteryCurrent = lists.map((x) => {
     return x.batteryCurrent;

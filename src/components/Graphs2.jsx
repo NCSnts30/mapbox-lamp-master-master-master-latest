@@ -28,6 +28,14 @@ const Graphs2 = () => {
 
   const optionsBatteryPower = {
     maintainAspectRatio: false,
+    scales: {
+      y: {
+        ticks: {
+          callback: (label) => `${label} W`,
+        },
+      },
+    },
+    
     plugins: {
       legend: {
         position: 'top',
@@ -40,6 +48,13 @@ const Graphs2 = () => {
   };
   const optionsBatteryCurrent = {
     maintainAspectRatio: false,
+    scales: {
+      y: {
+        ticks: {
+          callback: (label) => `${label} A`,
+        },
+      },
+    },
     plugins: {
       legend: {
         position: 'top',
@@ -61,6 +76,13 @@ const Graphs2 = () => {
         text: `${nodeId} Battery Voltage Chart`,
       },
     },
+    scales: {
+      y: {
+        ticks: {
+          callback: (label) => `${label} V`,
+        },
+      },
+    },
   };
 
   const optionsTemperature = {
@@ -74,6 +96,13 @@ const Graphs2 = () => {
         text: `${nodeId} Temperature Chart`,
       },
     },
+    scales: {
+      y: {
+        ticks: {
+          callback: (label) => `${label} °C`,
+        },
+      },
+    },
   };
   const optionsLuminosity = {
     maintainAspectRatio: false,
@@ -84,6 +113,13 @@ const Graphs2 = () => {
       title: {
         display: true,
         text: `${nodeId} Luminosity Chart`,
+      },
+    },
+    scales: {
+      y: {
+        ticks: {
+          callback: (label) => `${label} lx`,
+        },
       },
     },
   };
@@ -186,6 +222,13 @@ const Graphs2 = () => {
         text: `${nodeId} Solar Power Chart`,
       },
     },
+    scales: {
+      y: {
+        ticks: {
+          callback: (label) => `${label} W`,
+        },
+      },
+    },
   };
   const optionsSolarCurrent = {
     maintainAspectRatio: false,
@@ -196,6 +239,13 @@ const Graphs2 = () => {
       title: {
         display: true,
         text: `${nodeId} Solar Current Chart`,
+      },
+    },
+    scales: {
+      y: {
+        ticks: {
+          callback: (label) => `${label} A`,
+        },
       },
     },
   };
@@ -210,6 +260,13 @@ const Graphs2 = () => {
         text: `${nodeId} State of Charge Chart`,
       },
     },
+    scales: {
+      y: {
+        ticks: {
+          callback: (label) => `${label} %`,
+        },
+      },
+    },
   };
   const optionsSOH = {
     maintainAspectRatio: false,
@@ -222,6 +279,13 @@ const Graphs2 = () => {
         text: `${nodeId} State of Health Chart`,
       },
     },
+    scales: {
+      y: {
+        ticks: {
+          callback: (label) => `${label} %`,
+        },
+      },
+    },
   };
   const optionsSolarVoltage = {
     maintainAspectRatio: false,
@@ -232,6 +296,13 @@ const Graphs2 = () => {
       title: {
         display: true,
         text: `${nodeId} Solar Voltage Chart`,
+      },
+    },
+    scales: {
+      y: {
+        ticks: {
+          callback: (label) => `${label} V`,
+        },
       },
     },
   };
