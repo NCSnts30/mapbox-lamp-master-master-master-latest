@@ -31,11 +31,11 @@ const Graphs2 = () => {
     scales: {
       y: {
         ticks: {
-          callback: (label) => `${label} W`,
+          callback: (label) => `${Number(label).toFixed(2)} W`,
         },
       },
     },
-    
+
     plugins: {
       legend: {
         position: 'top',
@@ -51,7 +51,7 @@ const Graphs2 = () => {
     scales: {
       y: {
         ticks: {
-          callback: (label) => `${label} A`,
+          callback: (label) => `${Number(label).toFixed(2)} A`,
         },
       },
     },
@@ -79,7 +79,7 @@ const Graphs2 = () => {
     scales: {
       y: {
         ticks: {
-          callback: (label) => `${label} V`,
+          callback: (label) => `${Number(label).toFixed(2)} V`,
         },
       },
     },
@@ -99,7 +99,7 @@ const Graphs2 = () => {
     scales: {
       y: {
         ticks: {
-          callback: (label) => `${label} °C`,
+          callback: (label) => `${Number(label).toFixed(2)} °C`,
         },
       },
     },
@@ -118,7 +118,7 @@ const Graphs2 = () => {
     scales: {
       y: {
         ticks: {
-          callback: (label) => `${label} lx`,
+          callback: (label) => `${Number(label).toFixed(2)} lx`,
         },
       },
     },
@@ -225,7 +225,7 @@ const Graphs2 = () => {
     scales: {
       y: {
         ticks: {
-          callback: (label) => `${label} W`,
+          callback: (label) => `${Number(label).toFixed(2)} W`,
         },
       },
     },
@@ -244,7 +244,7 @@ const Graphs2 = () => {
     scales: {
       y: {
         ticks: {
-          callback: (label) => `${label} A`,
+          callback: (label) => `${Number(label).toFixed(2)} A`,
         },
       },
     },
@@ -263,7 +263,7 @@ const Graphs2 = () => {
     scales: {
       y: {
         ticks: {
-          callback: (label) => `${label} %`,
+          callback: (label) => `${Number(label).toFixed(2)} %`,
         },
       },
     },
@@ -282,7 +282,7 @@ const Graphs2 = () => {
     scales: {
       y: {
         ticks: {
-          callback: (label) => `${label} %`,
+          callback: (label) => `${Number(label).toFixed(2)} %`,
         },
       },
     },
@@ -301,7 +301,7 @@ const Graphs2 = () => {
     scales: {
       y: {
         ticks: {
-          callback: (label) => `${label} V`,
+          callback: (label) => `${Number(label).toFixed(2)} V`,
         },
       },
     },
